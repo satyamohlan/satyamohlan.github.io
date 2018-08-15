@@ -1,0 +1,87 @@
+#signin{
+  max-width:350px;
+  background:#ffffff;
+  opacity:1;
+  margin:auto;
+  margin-top: 90px;
+  height: 525px;
+  text-align:center;
+  border:solid;
+  border-radius:4px;
+  position:sticky;
+  border-width:1px;
+  bottom:0px;
+  
+}
+
+#signin [type="submit"]{
+  background:#673AB7;
+  width:85%;
+  position:relative;
+  height:40px;
+  border-radius:4px;
+  font-size:15px;
+
+  color:white;
+  
+  font-weight:600;
+margin-top:80px;
+ 
+}
+#signin input[type="text"],#signin input[type="password"]{
+
+
+top:50px;
+margin-left:10%;
+margin-right:10%;
+  font-size:16px;
+  min-width:80%;
+  
+}
+input::placeholder{
+
+  font-size:16px;
+  padding:4px;
+}
+#signin input:focus{
+  border-width:2px 2px;
+}
+#signin h1{
+font-family:"Proxima Nova", Helvetica, Corbel, sans-serif;
+font-weight:400;
+margin-top:60px;
+margin-bottom:none;
+font-size:40px;
+}
+#longinlink{
+ /* font-size:16px; */
+ font-size: 17px;
+ position:absolute;
+ width:75%;
+ text-align:center;
+ bottom: 25px;
+ left:12%;
+ right: 12%;
+ color: #2196F3;
+}
+
+#signin input[type="password"]{
+  margin-top:20px;
+}
+label[class="text"] {
+  position:relative;
+  right:120px;
+  bottom:-45px;
+  margin-left:45px;
+  font-family:sans-serif;
+  font-weight:500;
+  font-size: 17px;
+}
+[for="user"]{
+top:60px
+}
+#signin input[type="checkbox"]
+{position:relative;top: 73px;left: -60px;width: 20px;/* background: #CDDC39; */height: 15px;}
+label[class="checkbox"]{position:relative;
+background:white;
+top: 72px;left: -60px;font-family:sans-serif;font-size: 15px;}
