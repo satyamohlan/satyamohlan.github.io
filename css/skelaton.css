@@ -17,7 +17,6 @@ body {
   font-family: "roboto", sans-serif;
   z-index: 1;
   /* background: #8BC34A; */
-
   /* overflow-y: visible; */
   box-sizing: border-box;
 }
@@ -204,6 +203,9 @@ nav #sidebar {
   display: none;
   left: 5px;
 }
+#sidebar:hover{
+  border-bottom:none;
+}
 nav #search {
   position: absolute;
   right: 40px;
@@ -224,8 +226,10 @@ nav input::placeholder {
 footer {
   width: 100%;
   background: #ffffff;
-  color: #847676; /* border:solid; */
-  position: relative; /* border-width:  2px; */
+  color: #847676;
+  /* border:solid; */
+  position: relative;
+  /* border-width:  2px; */
 }
 .subscription {
   position: relative;
