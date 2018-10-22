@@ -1,0 +1,142 @@
+body{
+
+
+    margin: 0px;
+  overflow-x: hidden;
+   scroll-snap-type: y mandatory;
+   overflow-y: scroll; 
+    font-family: 'Noto Sans', sans-serif;
+}
+section.div1{
+    width:100vw;
+height:100vh;
+scroll-snap-align: start;
+
+}
+section.div2{
+    scroll-snap-align: start;
+    width:100vw;
+    height:100vh;
+
+    top:-17px;
+    background:red;
+}
+section.div3{
+    scroll-snap-align: start;
+    width:100vw;
+    height:100vh; 
+    background:blue; 
+
+    top:-17px;
+}
+section .back img{
+    width:100%;
+    height:100vh;
+    object-fit:cover;
+    opacity: 0.3;
+
+}
+section .back{
+    background: black;
+       z-index: 1;
+}
+section .name{
+z-index: 3;
+color:white;
+position: relative;
+    bottom:350px;
+    margin-left:100px;
+    font-family: 'Noto Sans', sans-serif;
+}
+section .name h1{
+        font-size:40px;
+}
+section .name h3{
+    font-size:20px;
+    font-weight:100;
+}
+.icons a.fa{
+    display: inline;
+    font-size: 20px;
+}
+img.me{
+width:25vw;
+border-radius:50%;
+margin-left:50px;
+position: absolute;
+
+top:20px;
+}
+@media screen and (max-width:1310px){
+img.me{
+    top:300px;
+}
+section .name{
+    margin-left:30%;
+}
+}
+nav{
+    position: sticky;
+    top:0px;
+    z-index:2;
+
+}
+
+.navy{
+   background: none;
+   border:0px;
+   color:white; 
+   font-family: 'Noto Sans', sans-serif;
+   font-size:15px;
+   left:20px;
+}
+.naam{
+    position: relative;
+    top:5px;
+    font-size:25px;
+    }
+.ss .fa{
+    display:none;
+}
+.ss{
+    position: absolute;
+    right:0px;
+    margin-right: 20px;
+  top:20px;
+  z-index:2;
+      
+}
+@media screen and (max-width:800px){
+  .ss .navy{
+        display:none;
+        
+    }
+    .ss .fa{
+        display:block;
+        background: none;
+        border:0px;
+        color:white; 
+         }
+}
+@media screen and (max-width:1000px){
+img.me{
+    margin: auto;
+  text-align:center;
+  top:-200px;
+  padding:25%;
+  width:50%;
+  left:0px;
+    
+}
+section .name{
+ margin-left:0px;
+    top:-250px;
+    text-align: center;
+    width:100%;
+}
+}
+@media screen and (max-width:780px){
+    img.me{
+        top:-100px;
+    }
+}
