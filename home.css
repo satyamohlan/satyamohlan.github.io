@@ -11,14 +11,15 @@ section.div1{
     width:100vw;
 height:100vh;
 scroll-snap-align: start;
+position:relative;
 
 }
 section.div2{
     scroll-snap-align: start;
     width:100vw;
     height:100vh;
-
-    top:-17px;
+    top:-31px;
+    position:relative;
     background:black;
 }
 section.div3{
@@ -26,8 +27,8 @@ section.div3{
     width:100vw;
     height:100vh; 
     background:blue; 
-
-    top:-17px;
+    top:-31px;
+    position:relative;
 }
 section .back img{
     width:100%;
@@ -59,6 +60,7 @@ section .name h3{
     display: inline;
     font-size: 20px;
 }
+
 img.me{
 width:25vw;
 border-radius:50%;
@@ -78,9 +80,11 @@ section .name{
 nav{
     position: sticky;
     top:0px;
-    z-index:2;
-
+    z-index:5;
+    padding-bottom:20px;
+    background: black;
 }
+
 
 .navy{
    background: none;
@@ -90,6 +94,7 @@ nav{
    font-size:15px;
    left:20px;
    transition:0.5s;
+
 }
 .naam{
     position: relative;
@@ -111,6 +116,43 @@ button.navy:hover{
 
 color: black;
 }
+.sidebar{
+    width:100vw;
+    height:100vh;
+  
+  
+    position: sticky;
+    top:0px;
+    z-index: 3;
+    display:none;
+    grid-template-columns: 4fr 6fr;
+
+}
+.sidebar .one{
+
+    background:black;
+    height:100%;
+    z-index: 4;
+    transition:0.5s opacity;
+    position: relative;
+    top:0px;
+    opacity:0.9;
+}
+.sidebar .two{
+    background: #303030;
+    height: 100%;
+    top:0px;
+    width:320px;
+
+}
+
+.two div{
+    display:grid;
+    height:30%;
+    position: relative;
+    top:35%
+}
+
 @media screen and (max-width:800px){
   .ss .navy{
         display:none;
@@ -123,6 +165,13 @@ color: black;
         color:white; 
          }
 }
+.ss .fas{
+display: block;
+background: none;
+border: 0px;
+color: white;
+font-size:20px;
+}}
 @media screen and (max-width:1000px){
 img.me{
     margin: auto;
@@ -143,5 +192,10 @@ section .name{
 @media screen and (max-width:780px){
     img.me{
         top:-100px;
+    }
+}
+@media screen and (max-width:500px){
+   .sidebar .two{
+        width:100vw;
     }
 }
