@@ -6,7 +6,13 @@ body{
    scroll-snap-type: y mandatory;
    overflow-y: scroll; 
     font-family: 'Noto Sans', sans-serif;
+
 }
+*{
+    outline: none;
+    transition: 0.5s;
+}
+
 section.div1{
     width:100vw;
 height:100vh;
@@ -18,16 +24,16 @@ section.div2{
     scroll-snap-align: start;
     width:100vw;
     height:100vh;
-    top:-31px;
-    position:relative;
-    background:black;
+    position:relative;  
+    top:-51px;
+  background:red;
 }
 section.div3{
     scroll-snap-align: start;
     width:100vw;
     height:100vh; 
     background:blue; 
-    top:-31px;
+    top:-51px;
     position:relative;
 }
 section .back img{
@@ -57,7 +63,7 @@ section .name h3{
     font-size:20px;
     font-weight:100;
 }
-.icons a.fa{
+.icons a.fab{
     display: inline;
     font-size: 20px;
 }
@@ -83,7 +89,8 @@ nav{
     top:0px;
     z-index:5;
     padding-bottom:20px;
-    background: black;
+    height:36px;
+
 }
 
 
@@ -94,28 +101,35 @@ nav{
    font-family: 'Noto Sans', sans-serif;
    font-size:15px;
    left:20px;
+   height:90%;
+
    transition:0.5s;
+   margin-left:10px;
 
 }
 .naam{
-    position: relative;
-    top:5px;
-    font-size:25px;
+    position: absolute;
+    
+       font-size:25px;
     }
 .ss .fa{
     display:none;
+}
+.fa.fa-bars:hover{
+color:black;
 }
 .ss{
     position: absolute;
     right:0px;
     margin-right: 20px;
-  top:20px;
+  top:0px;
+  height:100%;
   z-index:2;
       
 }
 button.navy:hover{
-
-color: black;
+    transition: 0.5s;
+    color:black;
 }
 .sidebar{
     width:100vw;
@@ -134,7 +148,6 @@ color: black;
     background:black;
     height:100%;
     z-index: 4;
-    transition:0.5s opacity;
     position: relative;
     top:0px;
     opacity:0.9;
@@ -164,6 +177,15 @@ color: black;
         background: none;
         border:0px;
         color:white; 
+       position: relative;
+       top:10px;
+
+         }
+         nav{
+             padding-bottom: 10px;
+             position: relative;
+             top:-5px;
+          
          }
 }
 .ss .fas{
@@ -172,6 +194,8 @@ background: none;
 border: 0px;
 color: white;
 font-size:20px;
+position: relative;
+top:10px;
 }
 @media screen and (max-width:1000px){
 img.me{
@@ -199,4 +223,13 @@ section .name{
    .sidebar .two{
         width:100vw;
     }
+    img.me{
+        top:0px;
+    }
+}
+@media screen and (min-width:500px){
+.sidebar .two{
+
+width:auto;
+}
 }
