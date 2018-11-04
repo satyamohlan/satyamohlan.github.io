@@ -1,13 +1,21 @@
 document.getElementById("nava").addEventListener("click",navys);
+var show=false;
 function navys() {
-   if(document.getElementsByClassName("sidebar")[0].style.display ="none"){
+   if(show==false){
     document.getElementsByClassName("sidebar")[0].style.display ="grid";
-    document.getElementsByClassName("fa-bars")[0].className="fas fa-times";
+    document.getElementById("nava").className="fas fa-times";
     document.getElementsByTagName("nav")[0].style.background="black";
+    document.getElementsByClassName("div1")[0].style.position="relative";
+    show=true;
   }
-else if(document.getElementsByClassName("sidebar")[0].style.display ="grid"){
+  else {
+
     document.getElementsByClassName("sidebar")[0].style.display ="none";
     document.getElementById("nava").className="fa fa-bars";
+    document.getElementsByTagName("nav")[0].style.background="transparent";
+    document.getElementsByClassName("div1")[0].style.position="absolute";
+    show=false;
+
 }
 
 }
