@@ -11,7 +11,7 @@ function navys() {
   else {
 
     document.getElementsByClassName("sidebar")[0].style.display ="none";
-    document.getElementById("nava").className="fa fa-bars";
+    document.getElementById("nava").className="fas fa-bars";
     document.getElementsByTagName("nav")[0].style.background="transparent";
     document.getElementsByClassName("div1")[0].style.position="absolute";
     show=false;
