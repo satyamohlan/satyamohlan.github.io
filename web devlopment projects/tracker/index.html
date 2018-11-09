@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+   
+</head>
+<body>
+    <button class="ss"></button>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+$(".ss").click(function (){
+    if(navigator.geolocation)
+    navigator.geolocation.getCurrentPosition(function(position){
+        console.log(position);
+    });
+
+});
+const $s=$.getJSON("api.openweathermap.org/data/2.5/weather?q=London&appid=41762d2ed6153a4498eb1c5c17ec847f");
+console.log($s);
+</script>
+</html>
