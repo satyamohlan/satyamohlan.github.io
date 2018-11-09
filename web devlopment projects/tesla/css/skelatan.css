@@ -1,0 +1,43 @@
+ body{
+    border:0px;
+    margin: 0px;
+    font-family:roboto,'georgia';
+
+}
+nav{
+margin:0px;
+width:100vw;
+padding:10px;
+display:grid;
+background: black;
+grid-template-columns:0.1fr 1fr 1fr;
+color: aliceblue;
+}
+.logo{
+    display:grid;
+
+}
+.logo img{
+width: 15vw;
+}
+ul{
+    
+    display:grid;
+    grid-template-columns:1fr 1fr 1fr 1fr 1fr;
+    padding: 0px;
+  
+    margin:auto;
+    
+}
+li{
+    display: inline;
+    color: aliceblue;
+}
+button.navy{
+    margin:auto;
+    width:100px;
+    border:none;
+    background: none;
+    padding:none;
+    color:white;
+   }

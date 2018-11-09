@@ -1,0 +1,53 @@
+
+body{
+	background:#333;
+	margin:  0px;
+}
+*{
+     box-sizing: border-box;
+     /* overflow:hidden; */
+     /* display:  grid; */
+}
+.container{
+	width: 100vw;
+	height: 100vh;
+	display:  grid;
+	grid-template-columns: 1fr 1fr 1fr;
+}
+.clock{
+	/* overflow:  hidden; */
+	/* transform: rotate(100deg); */
+	width: 50vh;
+	text-align:  center;
+	align-self: center;
+	/* position:  absolute; */
+	border-radius:50%;
+	background: #ffffff;
+	height: 50vh;
+	margin:25vh;
+	color: #170c0c;
+	color: black;50px
+	min-height: 250px;
+}
+#time{
+	/* background: #1a581c; */
+	width: 80%;
+	margin-top: 30%;
+	margin-left: 10%;
+	height:  100px;
+}
+.rotorh{
+width: 4px;
+height: 25vh;
+position: absolute;
+top: 25vh;
+background: black;
+right: 50vw;}
+
+@keyframes rotate{
+from{
+	transform:rotate-x(0deg);
+}
+to{
+transform:rotate-x(30deg)}
+}
