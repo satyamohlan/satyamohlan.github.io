@@ -8,18 +8,39 @@
    
 </head>
 <body>
-    <button class="ss"></button>
+ <div class="weather">
+     <h2 class="city"></h2>
+     <h2 class="temp"></h2>
+     <div class="max-min">
+         <div class="min"></div>
+         <div class="max"></div>
+     </div>
+     <h2 class="state"></h2>
+     <img id="state"src="" alt="">
+     
+ </div>
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script>
-$(".ss").click(function (){
+    var id="41762d2ed6153a4498eb1c5c17ec847f";
+    var pos;
     if(navigator.geolocation)
     navigator.geolocation.getCurrentPosition(function(position){
-        console.log(position);
-    });
+      pos=position;
+    $.getJSON("https:/api.openweathermap.org/data/2.5/weather?lat="+pos.coords.latitude+"&lon="+pos.coords.longitude+"&appid="+id+"&units=metric",weather);
+      function weather(dat){
+      var city=dat.name;
+      var temp=dat.
+      console.log(dat)
+   document.getElementsByClassName("city")[0].innerHTML=city;
+   document.getElementsByClassName("")[0].innerHTML=s;
+      }
+   
+ 
+
 
 });
-const $s=$.getJSON("api.openweathermap.org/data/2.5/weather?q=London&appid=41762d2ed6153a4498eb1c5c17ec847f");
-console.log($s);
+
+
 </script>
 </html>
