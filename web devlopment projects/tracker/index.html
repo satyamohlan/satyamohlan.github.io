@@ -4,21 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
     <title>Document</title>
-   
+   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <img src="download (1).jpeg" alt="" class="back">
  <div class="weather">
      <h2 class="city"></h2>
-     <h2 class="temp"></h2>
-     <div class="max-min">
-         <div class="min"></div>
-         <div class="max"></div>
-     </div>
-     <h2 class="state"></h2>
+ 
      <img id="state"src="" alt="">
-     
- </div>
+         <h2 class="state"></h2>
+     <h2 class="temp"></h2> 
+  </div>
+  <div class="sun">
+      <div class="sunset">
+          <img src="" alt="">
+        <h2></h2>
+      </div>
+      <div class="sunrise">
+        <img src="" alt="">
+        <h2></h2>
+      </div>
+  </div>
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script>
@@ -27,13 +35,47 @@
     if(navigator.geolocation)
     navigator.geolocation.getCurrentPosition(function(position){
       pos=position;
-    $.getJSON("https:/api.openweathermap.org/data/2.5/weather?lat="+pos.coords.latitude+"&lon="+pos.coords.longitude+"&appid="+id+"&units=metric",weather);
+    $.getJSON("https://api.openweathermap.org/data/2.5/weather?lat="+pos.coords.latitude+"&lon="+pos.coords.longitude+"&appid="+id+"&units=metric",weather);
+  
       function weather(dat){
+        console.log(dat);
       var city=dat.name;
-      var temp=dat.
-      console.log(dat)
+      var weatherid= dat.weather[0].id;
+      var temprature=dat.main.temp;
+    var wimage
+     var state=dat.weather[0].main;
+    var sunrise=Date.now(dat.sys.sunrise);
+    if(weatherid>699&&weatherid<782){
+wimage="fas fa-smog";
+   }
+   if(weatherid>199&&weatherid<233){
+wimage="fas fa-bolt";
+   }
+   if(weatherid>299&&weatherid<322){
+wimage="fas fa-cloud-rain";
+   }
+   if(weatherid>499&&weatherid<532){
+wimage="fas fa-scloud-showers-heavy";
+   }
+   if(weatherid>599&&weatherid<623){
+wimage="fas fa-snowflake";
+   }
+   if(weatherid==800){
+wimage="fas fa-sun";
+   }
+   if(weatherid>800&&weatherid<805){
+wimage="fas fa-smog";
+   }
+
+   
+   document.getElementById("state").className=wimage;
    document.getElementsByClassName("city")[0].innerHTML=city;
-   document.getElementsByClassName("")[0].innerHTML=s;
+   document.getElementsByClassName("temp")[0].innerHTML=temprature+"'c";
+
+   document.getElementsByClassName("state")[0].innerHTML=state;
+
+   
+
       }
    
  
