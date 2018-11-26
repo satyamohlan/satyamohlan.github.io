@@ -1,5 +1,6 @@
 document.getElementById("nava").addEventListener("click",navys);
 var show=false;
+var project=$(".project");
 function navys() {
    if(show==false){
     document.getElementsByClassName("sidebar")[0].style.display ="grid";
