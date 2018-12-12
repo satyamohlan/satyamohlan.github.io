@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <title>Document</title>
+   <link rel="stylesheet" href="style.css">
+   <link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet">
+   <link rel="stylesheet" href="css/weather-icons.css">
+   <link rel="stylesheet" href="css/weather-icons-wind.css">
+ </head>
+<body>
+<img src="download (1).jpeg" alt="" class="back">
+ <div class="weather">
+   <div class="main">
+     <h2 class="city"></h2>
+ 
+     <img id="state"src="" alt="">
+         <h2 class="state"></h2>
+     <h2 class="temp"></h2> 
+    </div>
+    <div class="sun">
+        <img src="sunset.png" alt="sun" >
+         <h2 class="sunrise"></h2>
+         <h2 class="sunset"></h2>
+  </div>
+  <div class="wind">
+      <i class="wi wi-direction-up"></i>
+      <h2></h2>
+    </div>
+    <div class="sun two">
+    
+</div>
+<div class="wind two">
+
+</div>
+  </div>
+
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+  $(document).ready
+    var id="41762d2ed6153a4498eb1c5c17ec847f";
+    var pos;
+    if(navigator.geolocation)
+    navigator.geolocation.getCurrentPosition(function(position){
+      pos=position;
+    $.getJSON("https://api.openweathermap.org/data/2.5/weather?lat="+pos.coords.latitude+"&lon="+pos.coords.longitude+"&appid="+id+"&units=metric",weather);
+  
+      function weather(dat){
+        console.log(dat);
+      var city=dat.name;
+      var weatherid= dat.weather[0].id;
+      var temprature=dat.main.temp;
+     var state=dat.weather[0].main;
+    var sunrise=new Date(dat.sys.sunrise*1000);
+    var sunset=new Date(dat.sys.sunset*1000);
+  var windirection=dat.wind.deg;
+  var windspeed=dat.wind.speed;
+   
+   document.getElementById("state").className=" wi wi-owm-"+weatherid;
+   document.getElementsByClassName("city")[0].innerHTML=city;
+   document.getElementsByClassName("temp")[0].innerHTML=temprature+"'c";
+   document.getElementsByClassName("state")[0].innerHTML=state;
+   $("h2.sunrise")[0].innerHTML="sunrise:"+sunrise.getHours()+":"+sunrise.getMinutes()+" am";
+   $("h2.sunset")[0].innerHTML="sunset:"+(sunset.getHours()-12)+":"+sunset.getMinutes()+" pm";
+   $(".wind .wi")[0].style.transform="rotate("+windirection+"deg)";
+   $(".wind h2")[0].innerHTML=windirection+"deg<br>" +windspeed+"m/s";
+
+   
+
+      }
+   
+ 
+
+
+});
+
+
+</script>
+</html>
