@@ -1,8 +1,9 @@
 body{
 	margin:0;
-	overflow:hidden;
+	overflow-x:hidden;
 	font-family:'Noto Sans',sans-serif;
-	height:100vh
+	height:100vh;
+	background: #303030;
 }
 *{
 	outline:0;
@@ -21,11 +22,7 @@ body{
 		position:relative;
 		top:10px
 }
-	nav{
-		padding-bottom:10px;
-		position:relative;
-		top:0;
-}
+
 }
 nav{
 	position:sticky;
@@ -104,8 +101,11 @@ button.navy:hover{
 section.div1{
 	width:100vw;
 	height:100vh;
-	position:absolute;
-	top:0
+		top:0;
+}
+div.content{
+	position: absolute;
+	top:0px;
 }
 section .back img{
 	width:100%;
@@ -160,8 +160,11 @@ img.me{
 section.div1{
 	width:100vw;
 	height:100vh;
-	position:absolute;
-	top:0
+
+}
+section.div2{
+	width:100vw;
+	height:100vh;
 }
 section .back img{
 	width:100%;
@@ -210,13 +213,7 @@ img.me{
 		margin-left:30%
 }
 }
-nav{
-	position:sticky;
-	top:0;
-	z-index:5;
-	padding-bottom:20px;
-	height:36px
-}
+
 .navy{
 	background:0 0;
 	border:0;
@@ -296,11 +293,7 @@ button.navy:hover{
 		position:relative;
 		top:10px
 }
-	nav{
-		padding-bottom:10px;
-		position:relative;
-		top:0
-}
+
 }
 @media screen and (max-width:1000px){
 	img.me{
@@ -388,11 +381,7 @@ button.navy:hover{
 	.ss .fas{
 		display:block
 }
-	nav{
-		padding-bottom:10px;
-		position:relative;
-		top:0
-}
+
 }
 @media screen and (max-width:1000px){
 	img.me{

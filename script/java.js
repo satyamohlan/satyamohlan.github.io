@@ -7,6 +7,7 @@ function navys() {
     document.getElementsByTagName("nav")[0].style.background="black";
     document.getElementsByClassName("div1")[0].style.position="relative";
     show=true;
+    
   }
   else {
 
