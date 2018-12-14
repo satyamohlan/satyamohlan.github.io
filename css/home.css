@@ -4,11 +4,13 @@ body{
 	font-family:'Noto Sans',sans-serif;
 	height:100vh;
 	background: #303030;
+
+
 }
 *{
 	outline:0;
 	transition:.5s;
-	font-weight:100
+	font-weight:100;
 }
 @media screen and (max-width:800px){
 	.ss .navy{
@@ -25,11 +27,12 @@ body{
 
 }
 nav{
-	position:sticky;
+	position:fixed;
 	top:0;
 	z-index:5;
 	padding-bottom:20px;
-	height:36px
+	height:36px;
+	width: 100%;
 }
 button.naam{
 	position:absolute;
@@ -102,9 +105,18 @@ section.div1{
 	width:100vw;
 	height:100vh;
 		top:0;
+		scroll-snap-align:start;
+		
+}
+section.div2{
+	scroll-snap-align:start;
 }
 div.content{
 	position: absolute;
+		scroll-snap-type:y mandatory;
+		overflow-y: scroll;
+	scroll-snap-align:start;
+	
 	top:0px;
 }
 section .back img{
@@ -157,6 +169,7 @@ img.me{
 	outline:0;
 	transition:.5s
 }
+
 section.div1{
 	width:100vw;
 	height:100vh;
