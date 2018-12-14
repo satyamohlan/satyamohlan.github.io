@@ -3,7 +3,8 @@ body{
 	overflow-x:hidden;
 	font-family:'Noto Sans',sans-serif;
 	height:100vh;
-	background: #303030;
+	background: #424040;
+	color: rgb(194, 193, 193);
 
 
 }
@@ -15,14 +16,6 @@ body{
 @media screen and (max-width:800px){
 	.ss .navy{
 		display:none
-}
-	.ss .fa{
-		display:block;
-		background:0 0;
-		border:0;
-		color:#fff;
-		position:relative;
-		top:10px
 }
 
 }
@@ -38,12 +31,6 @@ button.naam{
 	position:absolute;
 	font-size:25px
 }
-.ss .fa{
-	margin:0;
-	overflow:hidden;
-	font-family:'Noto Sans',sans-serif;
-	height:100vh
-}
 .navy{
 	background:0 0;
 	border:0;
@@ -54,12 +41,6 @@ button.naam{
 	height:90%;
 	transition:.5s;
 	margin-left:10px
-}
-.ss .fa{
-	display:none
-}
-.fa.fa-bars:hover{
-	color:#000
 }
 .ss{
 	position:absolute;
@@ -131,7 +112,7 @@ section .back{
 }
 section .name{
 	z-index:3;
-	color:#fff;
+	color:rgb(194, 193, 193);
 	position:relative;
 	bottom:350px;
 	margin-left:100px;
@@ -139,16 +120,15 @@ section .name{
 	padding:10px;
 	margin-top:51px
 }
-section .name h1{
-	font-size:40px
-}
-section .name h3{
-	font-size:20px;
-	font-weight:100
-}
+
 .icons a.fab{
 	display:inline;
-	font-size:20px
+	font-size:20px;
+	color:white;
+	text-decoration: none;
+}
+.fab:hover{
+color:#000;
 }
 .icons{
 	font-weight:100
@@ -177,39 +157,41 @@ section.div1{
 }
 section.div2{
 	width:100vw;
-	height:100vh;
+	height:95vh;
+	margin-top:50px;
+	display: grid;
+	grid-row: 1fr 5fr;
+    
+}
+.div2 h1{
+	font-size:7vmin;
+	text-align: center;
+	height:min-content;
+	
+}
+.project-list{
+	display:grid;
+
 }
 section .back img{
 	width:100%;
 	height:100vh;
 	object-fit:cover;
-	opacity:.3
+	opacity:.3;
 }
 section .back{
 	background:#000;
 	z-index:1
 }
-section .name{
-	z-index:3;
-	color:#fff;
-	position:relative;
-	bottom:350px;
-	margin-left:100px;
-	font-family:'Noto Sans',sans-serif;
-	padding:10px;
-	margin-top:51px
-}
+
 section .name h1{
-	font-size:40px
+	font-size:40px;
 }
 section .name h3{
 	font-size:20px;
 	font-weight:100
 }
-.icons a.fab{
-	display:inline;
-	font-size:20px
-}
+
 img.me{
 	width:25vw;
 	border-radius:50%;
@@ -298,14 +280,6 @@ button.navy:hover{
 	.ss .navy{
 		display:none
 }
-	.ss .fa{
-		display:block;
-		background:0 0;
-		border:0;
-		color:#fff;
-		position:relative;
-		top:10px
-}
 
 }
 @media screen and (max-width:1000px){
@@ -343,9 +317,6 @@ button.navy:hover{
 	.sidebar .two{
 		width:auto
 }
-}
-.fa.fa-bars:hover{
-	color:#000
 }
 .ss{
 	position:absolute;
