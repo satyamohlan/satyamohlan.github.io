@@ -5,8 +5,16 @@ body{
 	height:100vh;
 	background: #424040;
 	color: rgb(194, 193, 193);
-
-
+}
+::-webkit-scrollbar{
+	width:5px;
+}
+::-webkit-scrollbar-thumb{
+background:white;
+border-radius:5px;
+}
+::-webkit-scrollbar-thumb:hover,::-webkit-scrollbar-thumb:active{
+	background: #000;
 }
 *{
 	outline:0;
@@ -158,8 +166,11 @@ section.div1{
 section.div2{
 
 	margin-top:50px;
+	width:100vw;
 	display: grid;
-	grid-template-rows:1fr 4fr ;
+	grid-template-rows:1fr 9fr;
+	overflow: hidden;
+	height:95vw;
     
 }
 .div2 h1{
@@ -169,11 +180,17 @@ section.div2{
 	
 }
 .project-list{
-	display:grid;
+	display:inline-grid;
+    overflow:scroll;
 
-	grid-template-columns: 1fr 1fr 1fr;
-	grid-template-rows:1fr 1fr 1fr;
+
+	margin-left:5%;
+	margin-right:5%;
 	grid-gap:10px;
+	grid-auto-columns: 320px;
+	grid-auto-rows: 180px;
+	overflow-x: hidden;
+	height: ;
 
 }
 .project{
