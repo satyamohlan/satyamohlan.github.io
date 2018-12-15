@@ -156,21 +156,28 @@ section.div1{
 
 }
 section.div2{
-	width:100vw;
-	height:95vh;
+
 	margin-top:50px;
 	display: grid;
-	grid-row: 1fr 5fr;
+	grid-template-rows:1fr 4fr ;
     
 }
 .div2 h1{
 	font-size:7vmin;
 	text-align: center;
-	height:min-content;
+
 	
 }
 .project-list{
 	display:grid;
+
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-rows:1fr 1fr 1fr;
+	grid-gap:10px;
+
+}
+.project{
+background: #fff;
 
 }
 section .back img{
