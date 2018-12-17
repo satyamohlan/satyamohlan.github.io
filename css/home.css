@@ -7,14 +7,14 @@ body{
 	color: rgb(194, 193, 193);
 }
 ::-webkit-scrollbar{
-	width:5px;
+	width:3px;
 }
 ::-webkit-scrollbar-thumb{
 background:white;
 border-radius:5px;
 }
 ::-webkit-scrollbar-thumb:hover,::-webkit-scrollbar-thumb:active{
-	background: #000;
+	background: #;
 }
 *{
 	outline:0;
@@ -170,7 +170,7 @@ section.div2{
 	display: grid;
 	grid-template-rows:1fr 9fr;
 	overflow: hidden;
-	height:95vw;
+	height:95vh;
     
 }
 .div2 h1{
@@ -180,22 +180,20 @@ section.div2{
 	
 }
 .project-list{
-	display:inline-grid;
+	display:grid;
     overflow:scroll;
+grid-gap: 10px;
+	margin-left:2.5%;
+	margin-right:2.5%;
 
-
-	margin-left:5%;
-	margin-right:5%;
-	grid-gap:10px;
-	grid-auto-columns: 320px;
-	grid-auto-rows: 180px;
-	overflow-x: hidden;
-	height: ;
 
 }
 .project{
 background: #fff;
 
+width:320px;
+height:180px;
+align-items: center;
 }
 section .back img{
 	width:100%;
