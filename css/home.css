@@ -13,28 +13,33 @@ body{
 background:white;
 border-radius:5px;
 }
-::-webkit-scrollbar-thumb:hover,::-webkit-scrollbar-thumb:active{
-	background: #;
-}
+
 *{
 	outline:0;
-	transition:.5s;
+	transition:cubic-bezier(0.075, 0.82, 0.165, 1);
 	font-weight:100;
 }
 @media screen and (max-width:800px){
 	.ss .navy{
-		display:none
+		display:none;
+		overflow: hidden;
 }
 
 }
 nav{
-	position:fixed;
-	top:0;
+	position: fixed;;
+top:60px;
 	z-index:5;
-	padding-bottom:20px;
-	height:36px;
+overflow: hidden;
+	height:60px;
 	width: 100%;
+
 }
+.nav-con{
+opacity: 0;
+	background: #000;
+}
+
 button.naam{
 	position:absolute;
 	font-size:25px
@@ -94,7 +99,7 @@ section.div1{
 	width:100vw;
 	height:100vh;
 		top:0;
-		scroll-snap-align:start;
+	
 		
 }
 section.div2{
@@ -103,9 +108,7 @@ section.div2{
 div.content{
 	position: absolute;
 		scroll-snap-type:y mandatory;
-		overflow-y: scroll;
-	scroll-snap-align:start;
-	
+		overflow-y: scroll;	
 	top:0px;
 }
 section .back img{

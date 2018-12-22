@@ -20,3 +20,12 @@ function navys() {
 }
 
 }
+$(window).scroll(function(){
+    
+    if($(document).scrollTop()<100){
+      console.log($(document).scrollTop());
+        $("nav")[0].style.top="-"+(60-(($(document).scrollTop()/100)*60))+"px";
+        $("nav")[0].style.opacity=($(document).scrollTop()/100);
+    }
+ }  
+ );
