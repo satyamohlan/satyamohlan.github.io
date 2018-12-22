@@ -28,7 +28,7 @@ border-radius:5px;
 }
 nav{
 	position: fixed;;
-top:60px;
+
 	z-index:5;
 overflow: hidden;
 	height:60px;
