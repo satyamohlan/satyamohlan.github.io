@@ -187,6 +187,7 @@ section.div2{
 	text-align: center;
 	position: sticky;
 
+
 	
 }
 .project-list{
@@ -195,7 +196,7 @@ section.div2{
 grid-gap: 10px;
 	margin-left:2.5%;
 	margin-right:2.5%;
-
+  text-align: center;
 
 }
 .project{
