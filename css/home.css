@@ -140,11 +140,28 @@ section .name{
 	color:white;
 	text-decoration: none;
 }
+ .contactme .icons a.fab{
+	font-size:30px;
+	margin-left: 10px;
+}
 .fab:hover{
 color:#000;
 }
 .icons{
 	font-weight:100
+}
+.fab.fa-twitter:hover{
+	color:#1DA1F2;
+}
+.fab.fa-youtube:hover{
+	color:red;
+}
+.fab.fa-github:hover{
+	color:white;
+	background: #000
+}
+.fab.fa-instagram:hover{
+	color:purple;
 }
 img.me{
 	width:25vw;
@@ -178,14 +195,17 @@ section.div2{
 	height:91vh;
 	color:black;
 	background: rgb(26, 209, 133);
+	text-align: center;
 	
 }
 #contact{
 	background: #652bce;
+	color:white;
 }
-.contactme{
+#contact h3 a{
+color: #fff;
+}
 
-}
 .div2 h1{
 	font-size:7vmin;
 	text-align: center;
