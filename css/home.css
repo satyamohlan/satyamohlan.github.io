@@ -2,7 +2,7 @@ body{
 	margin:0;
 	overflow-x:hidden;
 	font-family:'Noto Sans',sans-serif;
-	height:100vh;
+	width:100vw;
 	background: #424040;
 	color: rgb(194, 193, 193);
 	overflow-x: hidden;
@@ -318,9 +318,7 @@ img.me{
 	position:relative;
 	top:10px
 }
-.fas.fa-bars:hover{
-	color:#000
-}
+
 .ss{
 	position:absolute;
 	right:0;
@@ -355,7 +353,7 @@ img.me{
 	display:grid;
 	height:30%;
 	position:relative;
-	top:35%
+	top:35%;
 }
 @media screen and (max-width:800px){
 	.ss .navy{
