@@ -5,6 +5,7 @@ body{
 	height:100vh;
 	background: #424040;
 	color: rgb(194, 193, 193);
+	overflow-x: hidden;
 }
 ::-webkit-scrollbar{
 	width:3px;
@@ -103,7 +104,7 @@ section.div1{
 		
 }
 section.div2{
-	scroll-snap-align:start;
+	scroll-snap-align:middle;
 }
 div.content{
 	position: absolute;
@@ -123,7 +124,7 @@ section .back{
 }
 section .name{
 	z-index:3;
-	color:rgb(194, 193, 193);
+
 	position:relative;
 	bottom:350px;
 	margin-left:100px;
@@ -168,22 +169,28 @@ section.div1{
 }
 section.div2{
 
-	margin-top:50px;
+
 	width:100vw;
 	display: grid;
 	grid-template-rows:1fr 9fr;
 	overflow: hidden;
-	height:95vh;
-    
+	height:91vh;
+	color:black;
+	background: rgb(26, 209, 133);
+	
+}
+#contact{
+	background: #2268aa;
 }
 .div2 h1{
 	font-size:7vmin;
 	text-align: center;
+	position: sticky;
 
 	
 }
 .project-list{
-	display:grid;
+	display:inline;
     overflow:scroll;
 grid-gap: 10px;
 	margin-left:2.5%;
@@ -193,10 +200,37 @@ grid-gap: 10px;
 }
 .project{
 background: #fff;
-
+color:black;
 width:320px;
-height:180px;
-align-items: center;
+height:250px;
+margin:10px;
+display:inline-grid;
+
+}
+.project p{
+font-size:13.5px;
+color:rgb(82, 79, 79);
+}
+.project img{
+	object-fit: contain;
+	width:100%;}
+	.project h3{
+		margin-left:10px;
+	}
+.project a{
+	background:0 0;
+	border:3px black solid;
+	color:black;
+
+    margin-left: 10px;
+	font-size:18px;
+	text-decoration: none;
+	border-radius:6px;
+	padding:5px;
+}
+.project a:hover{
+	color:white;
+	background: #000;
 }
 section .back img{
 	width:100%;
