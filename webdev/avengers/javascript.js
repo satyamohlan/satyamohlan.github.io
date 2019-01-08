@@ -1,8 +1,24 @@
 var x=document.getElementById("time");
-var y=document.getElementById("rotorh");
-function myfunction(){
-var d=new Date();
-x.innerHTML=d.getHours()+":"+d.getMinutes()+":"+d.getSeconds();
 
+function myfunction(){
+var bday=new Date(2005,05,20,21,45,0);
+var d=new Date();
+var age=(d.getTime()-bday.getTime());
+
+
+var nbday=new Date(2019,05,20,21,45,0);
+var agey=(age/(1000*60*60*24*365.25)).toFixed(1);
+var agem=(age/(1000*60*60*24*12)).toFixed();
+var aged=(age/(1000*60*60*24)).toFixed(0);
+var ageh=(age/(1000*60*60)).toFixed(0);
+var agemn=(age/(1000*60)).toFixed(0);
+var ages=(age/(1000)).toFixed(0);
+x.innerHTML=agey+" Years<br>"+agem+" Months<br>"+aged+" Days<br>"+ageh+" Hours <br>"+agemn+" Minutes<br>"+ages+" Seconds";
+x.style.textAlign="center";
 }
-var y=setInterval(myfunction,1000);
+var y=setInterval(myfunction,1000);;
+ myfunction();
+
+function bde(){
+    console.log(document.getElementsByTagName("bday"));;
+}
