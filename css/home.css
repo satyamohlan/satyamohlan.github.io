@@ -405,6 +405,12 @@ img.me{
 }
 
 }
+@media screen and (min-width:1000px){
+	section .name h3{
+		margin-left:unset;
+		margin-right: unset;
+	}
+}
 @media screen and (max-width:780px){
 	img.me{
 		top:-100px;
