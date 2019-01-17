@@ -1,11 +1,11 @@
 body{
 	margin:0;
 	overflow-x:hidden;
-	font-family:'Noto Sans',sans-serif;
+	font-family:'noto-sans',sans-serif;
 	width:100vw;
 	background: #424040;
 	color: rgb(194, 193, 193);
-	overflow-x: hidden;
+
 }
 ::-webkit-scrollbar{
 	width:3px;
@@ -17,7 +17,7 @@ border-radius:5px;
 
 *{
 	outline:0;
-	transition:cubic-bezier(0.075, 0.82, 0.165, 1);
+	
 	font-weight:100;
 }
 @media screen and (max-width:800px){
@@ -50,7 +50,7 @@ opacity: 0;
 	background:0 0;
 	border:0;
 	color:#fff;
-	font-family:'Noto Sans',sans-serif;
+	font-family:'noto-sans',sans-serif;
 	font-size:15px;
 	left:20px;
 	height:90%;
@@ -111,7 +111,9 @@ section.div2{
 div.content{
 	position: absolute;
 		scroll-snap-type:y mandatory;
+		width:100vw;
 		overflow-y: scroll;	
+		overflow-x: hidden;
 	top:0px;
 }
 section .back img{
@@ -130,7 +132,7 @@ section .name{
 	position:relative;
 	bottom:350px;
 	margin-left:100px;
-	font-family:'Noto Sans',sans-serif;
+	font-family:'noto-sans',sans-serif;
 	padding:10px;
 	margin-top:51px
 }
@@ -149,7 +151,13 @@ section .name{
 color:#000;
 }
 .icons{
-	font-weight:100
+	font-weight:100;
+	animation:up 1s;
+	opacity:0;
+	position: relative;
+	animation-fill-mode: forwards;
+	
+	animation-delay: 11s;
 }
 .fab.fa-twitter:hover{
 	color:#1DA1F2;
@@ -158,11 +166,10 @@ color:#000;
 	color:red;
 }
 .fab.fa-github:hover{
-	color:white;
-	background: #000
+	color:purple;
 }
 .fab.fa-instagram:hover{
-	color:purple;
+	color:rgb(117, 10, 117);
 }
 img.me{
 	width:25vw;
@@ -177,8 +184,7 @@ img.me{
 	font-size:25px
 }
 *{
-	outline:0;
-	transition:.5s
+	outline:0
 }
 
 section.div1{
@@ -271,10 +277,30 @@ section .back{
 
 section .name h1{
 	font-size:40px;
+	animation:fade 2s;
+}
+#about{
+	width:100vw;
+	text-align: center;
 }
 section .name h3{
 	font-size:20px;
-	font-weight:100
+	font-weight:100;
+	animation: type 8.7s steps(58,end), blink-caret 0.8s step-end infinite;	border-right: .15em solid orange; 
+	animation-delay: 1.5s;
+	
+	
+    animation-fill-mode: forwards;
+	width:0ch;
+	margin-left:auto;
+	margin-right: auto;
+	white-space:nowrap;
+	text-align: center;
+	overflow: hidden;
+	font-family:consolas;
+	
+	
+
 }
 
 img.me{
@@ -298,7 +324,7 @@ img.me{
 	background:0 0;
 	border:0;
 	color:#fff;
-	font-family:'Noto Sans',sans-serif;
+	font-family:'noto-sans',sans-serif;
 	font-size:15px;
 	left:20px;
 	height:90%;
@@ -377,6 +403,7 @@ img.me{
 		text-align:center;
 		width:95%
 }
+
 }
 @media screen and (max-width:780px){
 	img.me{
@@ -457,9 +484,11 @@ img.me{
 		margin-left:0;
 		top:-300px;
 		text-align:center;
-		width:95%
+		width:95%;
+		
 }
 }
+
 @media screen and (max-width:780px){
 	img.me{
 		top:-100px;
@@ -480,3 +509,35 @@ img.me{
 		width:auto
 }
 }
+@keyframes type{
+from{
+width:0ch;
+}
+to{
+	width:58ch;
+
+}
+}
+@keyframes fade{
+	from{
+	opacity: 0;
+	}
+	to{
+	  opacity:1;
+	
+	}
+	}
+	@keyframes blink-caret {
+		from, to { border-color: transparent; }
+		50% { border-color: orange; }
+	  }
+	  @keyframes up{
+		  from{
+			  opacity:0;
+			  top:20px
+		  }
+		  to{
+			  opacity: 1;
+			  top:0px;
+		  }
+	  }
