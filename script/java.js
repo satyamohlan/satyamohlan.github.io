@@ -39,13 +39,18 @@ else{
 }  
 );
 var i = 0;
-var txt = 'Lorem ipsum typing effect!'; /* The text */
-var speed = 50; /* The speed/duration of the effect in milliseconds */
-
+var txt = ' aspiring web developer, designer, programmer and much more'; /* The text */
+var speed = 150; /* The speed/duration of the effect in milliseconds */
+typeWriter();
 function typeWriter() {
   if (i < txt.length) {
-    $(".name h3").innerHTML += txt.charAt(i);
+    if(i>0){
+    $(".name h3")[0].innerHTML += txt.charAt(i)+"";
     i++;
     setTimeout(typeWriter, speed);
   }
+  else{
+    setTimeout(typeWriter,2500);
+    i++;
+  }}
 }

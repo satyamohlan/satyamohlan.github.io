@@ -1,0 +1,58 @@
+section.div2{
+    width:100vw;
+	display: grid;
+	grid-template-rows:1fr 9fr;
+	overflow: hidden;
+	height:100vh;
+	color:black;
+	background: rgb(4, 33, 53);
+	text-align: center;
+}
+.project-list{
+	display:inline;
+    
+grid-gap: 10px;
+	margin-left:2.5%;
+	margin-right:2.5%;
+  text-align: center;
+  
+}
+.div2 h1{
+	font-size:7vmin;
+	text-align: center;
+	position: sticky;
+}
+.project{
+background: #fff;
+color:black;
+width:320px;
+height:250px;
+margin:10px;
+display:inline-grid;
+
+}
+.project p{
+font-size:13.5px;
+color:rgb(82, 79, 79);
+}
+.project img{
+	object-fit: contain;
+	width:100%;}
+	.project h3{
+		margin-left:10px;
+	}
+.project a{
+	background:0 0;
+	border:3px black solid;
+	color:black;
+
+    margin-left: 10px;
+	font-size:18px;
+	text-decoration: none;
+	border-radius:6px;
+	padding:5px;
+}
+.project a:hover{
+	color:white;
+	background: #000;
+}
