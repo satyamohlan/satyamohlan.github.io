@@ -160,7 +160,7 @@ color:#000;
 	position: relative;
 	animation-fill-mode: forwards;
 	
-	animation-delay: 13s;
+	animation-delay: 13.25s;
 }
 .fab.fa-twitter:hover{
 	color:#1DA1F2;
@@ -301,7 +301,7 @@ section.div2{
 	color:#fff;
 	font-size:20px;
 	position:relative;
-	top:10px
+	top:15px
 }
 
 .ss{
@@ -440,14 +440,14 @@ section.div2{
 	img.me{
 		margin:auto;
 		text-align:center;
-		top:-150px;
+		top:-275px;
 		padding:30%;
 		width:40%;
 		left:0
 }
 	section .name{
 		margin-left:0;
-		top:-300px;
+		top:-350px;
 		text-align:center;
 		width:95%;
 		
@@ -466,13 +466,17 @@ section.div2{
 		width:100vw
 }
 	img.me{
-		top:0
+		top:0;
+	width:60%;
+	padding: 20%;
+
 }
 }
 @media screen and (min-width:500px){
 	.sidebar .two{
 		width:auto
 }
+
 }
 @keyframes type{
 0%{
@@ -511,11 +515,13 @@ width:0ch;
 	  }
 	  @keyframes flip{
 		  from{
-			-webkit-transform: scaleX(-1);
-			transform: scaleX(-1);
+			-webkit-transform: scaleX(1);
+			transform: scaleX(1);
+			border-radius:0%;
 		  }
 		  to{
 			-webkit-transform: scaleX(1);
-			transform: scaleX(y1);
+			transform: scaleX(1);
+			border-radius:50%;
 		  }
 	  }
