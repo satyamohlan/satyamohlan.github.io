@@ -1,0 +1,23 @@
+table,tr,th,td{
+    border:solid;
+    border-width:0px 1px;
+    border-collapse:collapse;
+    }
+  td{    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+width:100vw;}
+  
+  th{ background-color: #4CAF50;
+  height:30px;
+  width:30px;
+  padding:2px 2px;
+  color:white;
+  font-family: 'Lato', sans-serif;
+  font-size:17px;
+  
+  padding-left:12px;
+  }
+
+
+  tr{height:35px;}
+   tr:nth-child(even){background-color: #f2f2f2;
+   height:30px;}
