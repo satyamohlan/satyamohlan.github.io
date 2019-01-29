@@ -1,34 +1,104 @@
+
 section.div2{
     width:100vw;
 	display: grid;
-	grid-template-rows:1fr 9fr;
 	overflow-x: hidden;
 	height:unset;
 	color:black;
 	background: rgb(4, 33, 53);
 	text-align: center;
+	font-family: 'Open Sans',sans-serif;
 }
-.project-list{
-	display:inline;
-    
-grid-gap: 10px;
-	margin-left:2.5%;
-	margin-right:2.5%;
-  text-align: center;
-  
+*{
+	text-transform: capitalize;
 }
 .div2 h1{
 	font-size:7vmin;
 	text-align: center;
 	position: sticky;
 	color:white;
+	height: min-content;
 }
+.allpro{
+	display: grid;
+	grid-gap: 10px;
+	height: min-content;
+}
+
+
+
+
+.minimizer{
+	display:grid;
+	height: min-content;
+
+}
+.close{
+width:70vw;
+min-width: 400px;
+height: 50px;
+padding-bottom: 10px;
+	font-family: monospace;
+font-size:20px;
+border:2px solid rgb(8, 100, 161);
+justify-self: center;
+background: rgb(11, 2, 24);
+color: white;
+}
+.close:hover{
+	cursor: pointer;
+}
+.plus:before{
+	opacity: 1;
+    left: 11px;
+    top: -100%;
+    height: 2px;
+    margin-top: -1px;
+    width: 16px;
+	background: #05eb1a;
+}
+
+.plus:before,.plus:after{
+	content: "";
+    position: absolute;
+
+}
+
+.plus:after {
+    left: 19px;
+    top:-100%;
+    height: 16px;
+    margin-top: -8px;
+    width: 2px;
+    margin-left: -1px;
+    background: #05eb1a;
+    transition: all 300ms ease-in-out;
+}
+.plus{
+	width:2px;
+	height: 10px;
+	transform: rotate(90deg); 
+}
+.minus:before{
+	opacity:0;
+}
+
+.project-list{
+   width:60vw;
+	grid-gap: 10px;
+	justify-self: center;
+	display: none;;
+	
+	  text-align: center;
+	  
+	}
 .project{
 background: #fff;
 color:black;
-width:320px;
-height:290px;
-margin:10px;
+width:100%;
+min-width: 320px;
+max-width:1000px;
+margin-top:20px;
 display:inline-grid;
 
 }
@@ -38,16 +108,20 @@ color:rgb(82, 79, 79);
 }
 .project img{
 	object-fit: contain;
-	width:100%;}
+	width:100%;
+}
 	.project h3{
-		margin-left:10px;
+		font-size: 30px;
+	  
+		margin:10px;
 	}
-.project a{
+.learnm{
 	background:0 0;
 	border:3px black solid;
 	color:black;
-
-    margin-left: 10px;
+	 text-align: center;
+	 justify-self: center;
+    margin-bottom: 10px;
 	font-size:18px;
 	text-decoration: none;
 	border-radius:6px;

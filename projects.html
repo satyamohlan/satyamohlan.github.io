@@ -2,43 +2,79 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=https://m.facebook.com/story.php?story_fbid=584416611985221&id=138866599478119, initial-scale=1.0">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <link rel="stylesheet" href="css/home.css">
     <link rel="stylesheet" href="css/projects.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet">
+    <script
+  src="https://code.jquery.com/jquery-3.3.1.js"
+  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+  crossorigin="anonymous"></script>
 </head>
 <body>
-    
+        <nav class="nav-con">
+        
+                <a class="navy naam" >satyam ohlan</a>
+             <div class="ss"> 
+                   <a class="navy" href="#contact">about me</a>
+             <a class="navy" href="projects.html">my projects</a>
+             <a class="navy">social media</a>
+             <button class="navy">newsletter</a>
+            <a class="fas fa-bars" id="nava" alt="side"></a>
+         </div>
+        </nav>
+        <div class="sidebar">
+            <div class="one"></div>
+            <div class="two">
+                <div>
+                    <button class="navy">youtube</button>
+                    <button class="navy">my projects</button>
+                    <button class="navy">social media</button>
+                    <button class="navy">about me</button>
+                    <button class="navy">newsletter</button>
+                </div>
+            </div>
+        </div>
     <section class="div2" id="mypro">
         <h1>My Projects</h1>
+        <div class="allpro">
+        <div class="minimizer">
+            <button class="close" onclick=expand(0)><div class="plus" ></div> web devlopment</button>
         <div class="project-list">
        <div class="project">
            <img src="images/weather.jpg" alt="">
-           <h3>Weather App     <a href="webdev/tracker/index.html" target="_window">Check It Out</a></h3>
-           
+           <h3>Weather App</h3>
+           <p>tells you about the weather</p>
+           <a href="webdev/tracker/index.html" target="_window" class="learnm">Check It Out</a>
    
        </div>
-       <div class="project">
-           <img src="images/avengars.jpg" alt="">
-           <h3> Avengers Fan Page<a href="webdev/avengers/avengers.html" target="_window">Check It Out</a>
-           </h3>
-           
-       </div>
+       
        <div class="project">
            <img src="images/class.jpg" alt="">
-           <h3>class info<a href="webdev/7h/date.html">Check It Out</a></h3>
-        
+           <h3>class info</h3>
+        <p>class annual awords</p>
+        <a href="webdev/7h/date.html" class="learnm" target="_window">Check It Out</a>
        </div>  
        
  
        <div class="project">
         <img src="images/use-of-modular.png" alt="">
-        <h3>Doofinator<a href="webdev/Doofenshmirtz Evil Inc/index.html">Check It Out</a></h3>
-     <p>the modular smartphone you want:based on project ara</p>
+        <h3>Doofinator</h3>
+     <p>The Modular Smartphone You Want:Based On Project ARA</p>
+     <a href="webdev/Doofenshmirtz Evil Inc/index.html" class="learnm"target="_window">Check It Out</a>
     </div>   
-       
+       </div>
         </div>
+        <div class="minimizer">
+                <button class="close" onclick=expand(1)><div class="plus" ></div>  videos</button></div>
+            <div class="project-list"></div></div>
     </section>
 </body>
+
+<script src="script/java.js"></script>
+<script src="script/projects.js"></script>
 </html>
