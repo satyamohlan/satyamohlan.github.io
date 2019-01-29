@@ -88,7 +88,7 @@ text-align: center;
 	top:0;
 	height:100%;
 	z-index:2;
-	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
     align-items: center;
 }
 .navy:hover{
@@ -367,9 +367,11 @@ section.div2{
 }
 @media screen and (max-width:800px){
 	.ss .navy{
-		display:none
+		display:none;
 }
-
+.ss{
+	display: inline;
+}
 }
 @media screen and (max-width:1000px){
 	img.me{
