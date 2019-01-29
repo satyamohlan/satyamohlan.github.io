@@ -131,3 +131,8 @@ color:rgb(82, 79, 79);
 	color:white;
 	background: #000;
 }
+@media(max-width:500px){
+.project-list{
+	width:320px;
+}
+}
