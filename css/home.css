@@ -257,10 +257,6 @@ section .name h1{
 	animation-fill-mode: forwards;
 	animation-delay: 2s;
 }
-#about{
-	width:100vw;
-	text-align: center;
-}
 section .name h3{
 	font-size:20px;
 	font-weight:100;
@@ -491,20 +487,6 @@ section.div2{
 
 }
 }
-
-
-}
-@keyframes type{
-0%{
-width:0ch;
-}
-100%{
-	width:58ch;
-    white-space: nowrap;
-}
-
-
-}
 @keyframes fade{
 	from{
 	opacity: 0;
@@ -515,10 +497,6 @@ width:0ch;
 	}
 	
 	}
-	@keyframes blink-caret {
-		from, to { border-color: transparent; }
-		50% { border-color: orange; }
-	  }
 	  @keyframes up{
 		  from{
 			  opacity:0;
