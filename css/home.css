@@ -56,6 +56,7 @@ font-size: 21px;
 height:30px;
 justify-self: center;
 text-align: center;
+font-family: 'Oswald', sans-serif;
 }
 .navy{
 	background:0 0;
@@ -124,16 +125,8 @@ text-align: center;
 	position:relative;
 	top:35%
 }
-.div1{
-	width:100vw;
-	height:100vh;
-		top:0;
-	
-		
-}
-.div2{
-	scroll-snap-align:middle;
-}
+
+
 div.content{
 	position: absolute;
 		scroll-snap-type:y mandatory;
@@ -141,6 +134,12 @@ div.content{
 		overflow-y: scroll;	
 		overflow-x: hidden;
 	top:0px;
+}.div1{
+	width:100vw;
+	height:100vh;
+		top:0;
+		scroll-snap-align: start;
+		
 }
  .back img{
 	width:100%;
@@ -233,6 +232,10 @@ img.me:hover{
 #contact{
 	background: #909990;
 	color:white;
+	height:79vh;
+	     font-family: 'Oswald', sans-serif;
+	position: relative;
+	top:50px;
 }
 #contact h3 a{
 color: #fff;
@@ -284,18 +287,26 @@ img.me{
 .lang{
 	display: grid;
 	grid-template-columns: 1fr 1fr;
-}
-.project h2{
-	border-bottom: 2px solid green;
 	width:max-content;
 	margin-left: auto;
 	margin-right: auto;
 }
+.prolink{
+	background-image: linear-gradient(to right,#F44336,#EC407A);
+	width:95vw;
+	margin-left: auto;
+	margin-right: auto;
+	color:white;
+	font-family:'Noto Sans',sans-serif;
+z-index: 4;
+	padding-bottom:25px;
+}
+
+
 
 .div2{
 z-index: 2;
 position: sticky;
-top:0;
 	width:100vw;
 	display: grid;
 	grid-template-rows:1fr 9fr;
@@ -316,31 +327,46 @@ top:0;
 	font-size:50px;
 	margin:0;
 	margin-top:30px;
-	
-	border-bottom:solid 10px #3e4447;
+	padding-top: 50px;
 
+	
+
+}
+ h1.under{
+	border-bottom:solid 10px #303030;
+	width: max-content;
+	margin-left: auto;
+	margin-right: auto;
+}
+#projects h1.under{
+	border-bottom: green 4px solid;
 }
 .am p{
 	text-transform: capitalize;
-	font-size:17px;
+	font-size:23px;
+	padding-bottom: 50px;
 }
 .am h3{
 	font-size: 30px;
 	margin:0;
+	font-family:'Oswald',sans-serif;
 
 		margin-top:30px;
 
 }
-#projects h2{
+#projects h1{
 	font-family:'Noto Sans',sans-serif;
-	font-size: 30px;
-	
+	font-size: 40px;
+	margin-top: 0;
 	
 }
+.prolink h1{
+	margin-top: 0;
+}
+
 #projects{
 	background: #fff;
-	padding-bottom: 20px;
-	z-index: 3;
+
 	
 }
 @media screen and (max-width:1310px){
@@ -369,16 +395,23 @@ top:0;
 }
 
 .learnm{
+	font-family:'Oswald',sans-serif;
+
 	background:0 0;
-	border:3px black solid;
-	color:black;
+	border:3px white solid;
+	color:white;
 	 text-align: center;
 	 justify-self: center;
     margin-bottom: 10px;
-	font-size:18px;
+	font-size:23px;
 	text-decoration: none;
 	border-radius:6px;
 	padding:5px;
+}
+.learnm:HOVER{
+	BACKGROUND:BLACK;
+	color: none;
+	border-color: #000;
 }
 .ss .fas{
 	background:0 0;
@@ -406,6 +439,7 @@ top:0;
 	top:0;
 	z-index:3;
 	display:none;
+	font-family: 'Oswald', sans-serif;
 	grid-template-columns:4fr 6fr
 }
 .sidebar .two{
@@ -425,8 +459,10 @@ top:0;
 	top:35%;
 }
 footer {
-	margin-top: 50px;
+	padding-top: 50px;
 	bottom: 0px;
+	background: #fff;
+	color:black;
   }
 
   .subscription input {
@@ -520,7 +556,6 @@ footer {
   .whole a.link1 {
 	color: inherit;
 	text-decoration: none;
-	font-family: "roboto", sans-serif;
 	/* font-size: 17px; */
 	/* vertical-align:  middle; */
 	/* margin-top:  20px; */
@@ -534,8 +569,7 @@ footer {
 	font-size: 17px;
 	text-align: center;
 	display: inline;
-	font-family: "roboto", sans-serif;
-  }
+    font-family: 'Oswald', sans-serif;  }
   .contact.us {
 	font-weight: 100;
 	font-family: "roboto", sans-serif;
