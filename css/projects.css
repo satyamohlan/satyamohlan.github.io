@@ -3,11 +3,12 @@ section.div2{
     width:100vw;
 	display: grid;
 	overflow-x: hidden;
-	height:unset;
+	height:min-content;
 	color:black;
 	background: rgb(4, 33, 53);
 	text-align: center;
 	font-family: 'Open Sans',sans-serif;
+	padding-bottom: 200px;
 }
 *{
 	text-transform: capitalize;
@@ -35,7 +36,6 @@ section.div2{
 }
 .close{
 width:70vw;
-min-width: 400px;
 height: 50px;
 padding-bottom: 10px;
 	font-family: monospace;
@@ -134,5 +134,8 @@ color:rgb(82, 79, 79);
 @media(max-width:500px){
 .project-list{
 	width:320px;
+}
+.close{
+	width:90vw;
 }
 }

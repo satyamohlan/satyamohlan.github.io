@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>contact me</title>
+    <link rel="stylesheet" href="css/home.css">
+    <meta name="theme-color" content="#000"/>
+   <link rel="shortcut icon" href="images/saty.bmp.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+</head>
+<body>
+        <nav class="nav-con" style="opacity:1;top:0;">
+        
+                <a class="navy naam"href="index.html">satyam ohlan</a>
+             <div class="ss"> 
+                <a class="navy" href="index.html">Home</a>
+            <a class="navy" href="projects.html">My Projects</a>
+            <a class="navy">Resume</a>
+            <a class="navy">Contact Me</a>
+          
+            <a class="fas fa-bars" id="nava" alt="side"></a>
+         </div>
+        </nav>
+<div class="sidebar">
+
+	<div class="two">
+        <div>
+            <a class="navy" href="index.html">Home</a>
+            <a class="navy" href="projects.html">My Projects</a>
+            <a class="navy">Resume</a>
+            <a class="navy">Contact Me</a>
+		</div>
+    </div>
+</div>
+
+    <section class="div2" id="contact">
+     <div class="contactme">
+         <h1>Contact Me</h1>
+         <div class="projects">
+             <h3> Email:<a href="mailto:satyam.ohlan1998@gmail.com">satyam.ohlan1998@gmail.com</a></h3>
+            
+         </div>
+         <h3>Follow Me At:</h3>
+         <div class="icons">
+        
+            
+             <a class="fab fa-twitter"target="_window" href="https://twitter.com/satyam_ohlan" alt="twitter"></a>
+             <a class="fab fa-instagram" target="_window" alt="instagram" href="https://www.instagram.com/ohlansatyam/"></a>
+
+             <a class="fab fa-github" href="https://github.com/satyamohlan" alt="github" target="_window"></a>
+             <a class="fab fa-youtube" href="" alt="youtube"></a>
+            
+          
+         </div><br>
+         ©satyamohlan 2018
+     </div>
+     
+ </section> 
+</body>
+<script
+  src="https://code.jquery.com/jquery-3.3.1.js"
+  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+  crossorigin="anonymous"></script>
+  
+<script>
+document.getElementById("nava").addEventListener("click",navys);
+        var show=false;
+        function navys() {
+          console.log("hi");
+           if(show==false){
+            document.getElementsByClassName("sidebar")[0].style.display ="grid";
+            document.getElementById("nava").className="fas fa-times";
+           
+        
+            show=true;
+            
+          }
+          else {
+        
+            document.getElementsByClassName("sidebar")[0].style.display ="none";
+            document.getElementById("nava").className="fas fa-bars";
+        
+            show=false;
+          }
+        }
+        </script>
+</html>

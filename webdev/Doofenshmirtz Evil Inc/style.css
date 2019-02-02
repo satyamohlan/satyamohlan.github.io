@@ -357,7 +357,7 @@ footer {
 
   border-width: 0px 1.5px 0px 0px;
 }
-.subscription button {
+.subscription a {
   background: #009688;
   max-width: 90px;
   padding: 10px;
