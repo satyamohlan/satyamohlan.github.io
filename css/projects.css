@@ -115,18 +115,7 @@ color:rgb(82, 79, 79);
 	  
 		margin:10px;
 	}
-.learnm{
-	background:0 0;
-	border:3px black solid;
-	color:black;
-	 text-align: center;
-	 justify-self: center;
-    margin-bottom: 10px;
-	font-size:18px;
-	text-decoration: none;
-	border-radius:6px;
-	padding:5px;
-}
+
 .project a:hover{
 	color:white;
 	background: #000;

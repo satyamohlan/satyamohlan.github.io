@@ -124,14 +124,14 @@ text-align: center;
 	position:relative;
 	top:35%
 }
-section.div1{
+.div1{
 	width:100vw;
 	height:100vh;
 		top:0;
 	
 		
 }
-section.div2{
+.div2{
 	scroll-snap-align:middle;
 }
 div.content{
@@ -142,17 +142,17 @@ div.content{
 		overflow-x: hidden;
 	top:0px;
 }
-section .back img{
+ .back img{
 	width:100%;
 	height:100vh;
 	object-fit:cover;
 	opacity:.3
 }
-section .back{
+ .back{
 	background:#000;
 	z-index:1
 }
-section .name{
+ .name{
 	z-index:1;
 
 	position:relative;
@@ -223,9 +223,10 @@ img.me:hover{
 	outline:0
 }
 
-section.div1{
+.div1{
 	width:100vw;
 	height:100vh;
+	position: sticky;
 
 }
 
@@ -239,26 +240,26 @@ color: #fff;
 
 
 
-section .back img{
+ .back img{
 	width:100%;
 	height:100vh;
 	object-fit:cover;
 	opacity:.3;
 }
-section .back{
+ .back{
 	background:#000;
 	z-index:1
 }
 
 
-section .name h1{
+ .name h1{
 	font-size:40px;
 	animation:fade 2s;
 	opacity: 0;
 	animation-fill-mode: forwards;
 	animation-delay: 2s;
 }
-section .name h3{
+ .name h3{
 	font-size:20px;
 	font-weight:100;
 
@@ -280,24 +281,73 @@ img.me{
 	position:absolute;
 	top:20px
 }
-section.div2{
+.lang{
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+}
+.project h2{
+	border-bottom: 2px solid green;
+	width:max-content;
+	margin-left: auto;
+	margin-right: auto;
+}
 
-
+.div2{
+z-index: 2;
+position: sticky;
+top:0;
 	width:100vw;
 	display: grid;
 	grid-template-rows:1fr 9fr;
 	overflow: hidden;
-	height:100vh;
+	height:min-content;
 	color:black;
-	background: rgb(26, 209, 133);
+	background-image:linear-gradient(to bottom right,#909990,#fff);
 	text-align: center;
+	
+}
+.am{
+	font-family:'Oswald',sans-serif;
+	width: max-content;
+	justify-self: center;
+
+}
+.am h1{
+	font-size:50px;
+	margin:0;
+	margin-top:30px;
+	
+	border-bottom:solid 10px #3e4447;
+
+}
+.am p{
+	text-transform: capitalize;
+	font-size:17px;
+}
+.am h3{
+	font-size: 30px;
+	margin:0;
+
+		margin-top:30px;
+
+}
+#projects h2{
+	font-family:'Noto Sans',sans-serif;
+	font-size: 30px;
+	
+	
+}
+#projects{
+	background: #fff;
+	padding-bottom: 20px;
+	z-index: 3;
 	
 }
 @media screen and (max-width:1310px){
 	img.me{
 		top:300px
 }
-	section .name{
+	 .name{
 		margin-left:30%
 }
 }
@@ -316,6 +366,19 @@ section.div2{
 .naam{
 	position:absolute;
 	font-size:25px
+}
+
+.learnm{
+	background:0 0;
+	border:3px black solid;
+	color:black;
+	 text-align: center;
+	 justify-self: center;
+    margin-bottom: 10px;
+	font-size:18px;
+	text-decoration: none;
+	border-radius:6px;
+	padding:5px;
 }
 .ss .fas{
 	background:0 0;
@@ -535,7 +598,7 @@ footer {
 		width:40%;
 		left:0
 }
-	section .name{
+	 .name{
 		margin-left:0;
 		top:-300px;
 		text-align:center;
@@ -544,7 +607,7 @@ footer {
 
 }
 @media screen and (min-width:1000px){
-	section .name h3{
+	 .name h3{
 		margin-left:unset;
 		margin-right: unset;
 		text-align: start;
@@ -617,7 +680,7 @@ footer {
 		width:40%;
 		left:0
 }
-	section .name{
+	 .name{
 		margin-left:0;
 		top:-350px;
 		text-align:center;

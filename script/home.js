@@ -1,5 +1,5 @@
 var i = 0;
-var txt = ' aspiring web developer, designer, programmer and much more'; /* The text */
+var txt = ' Aspiring web developer,Tech Enthusiast, programmer and much more'; /* The text */
 var speed = 150; /* The speed/duration of the effect in milliseconds */
 
 typeWriter();
