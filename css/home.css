@@ -232,10 +232,10 @@ img.me:hover{
 #contact{
 	background: #909990;
 	color:white;
-	height:79vh;
+	height:92vh;
 	     font-family: 'Oswald', sans-serif;
 	position: relative;
-	top:50px;
+	padding-top:50px;
 }
 #contact h3 a{
 color: #fff;
@@ -294,12 +294,12 @@ img.me{
 .prolink{
 	background-image: linear-gradient(to right,#F44336,#EC407A);
 	width:95vw;
+	padding: 50px 0px;
 	margin-left: auto;
 	margin-right: auto;
 	color:white;
 	font-family:'Noto Sans',sans-serif;
 z-index: 4;
-	padding-bottom:25px;
 }
 
 

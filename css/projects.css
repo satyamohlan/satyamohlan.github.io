@@ -7,7 +7,7 @@ min-height: 100vh;
 	overflow-x: hidden;
 	height:min-content;
 	color:black;
-	background-image:linear-gradient(to bottom right,rgb(86, 86, 202),rgb(17, 178, 228));
+	background-image: linear-gradient(to bottom right,#E91E63,#00BCD4);
 	text-align: center;
 	font-family: 'Open Sans',sans-serif;
 	padding-bottom: 200px;
@@ -21,6 +21,7 @@ min-height: 100vh;
 	position: sticky;
 	color:white;
 	height: min-content;
+	
 }
 .allpro{
 	display: grid;
