@@ -293,8 +293,16 @@ img.me{
 }
 .prolink{
 	background-image: linear-gradient(to right,#F44336,#EC407A);
-	width:95vw;
-	padding: 50px 0px;
+	width:48vw;
+	min-width:400px;
+	height:18vw;
+	min-height: 200px;
+	display:grid;
+	grid-auto-columns: max-content;
+	grid-auto-rows: max-content;
+	justify-content: center;
+	margin-top:50px;
+	padding: 10px 0px;
 	margin-left: auto;
 	margin-right: auto;
 	color:white;
@@ -302,11 +310,14 @@ img.me{
 z-index: 4;
 }
 
-
+#contactm{
+    background-image: linear-gradient(to right,#0f4e48,#00BCD4);
+}
 
 .div2{
 z-index: 2;
 position: sticky;
+height: max-content;
 	width:100vw;
 	display: grid;
 	grid-template-rows:1fr 9fr;
@@ -777,7 +788,7 @@ footer {
 			border-radius:0%;
 		  }
 		  to{
-			-webkit-transform: scaleX(1);
+			-webkit-transform: scaleX(-1);
 			transform: scaleX(1);
 			border-radius:50%;
 		  }

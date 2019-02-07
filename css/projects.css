@@ -29,7 +29,25 @@ min-height: 100vh;
 	height: min-content;
 }
 
+.learnm{
+	font-family:'Noto Sans',sans-serif;
 
+	background:0 0;
+	border:3px black solid;
+	color:black;
+	 text-align: center;
+	 justify-self: center;
+    margin-bottom: 10px;
+	font-size:20px;
+	text-decoration: none;
+	border-radius:6px;
+	padding:5px;
+}
+.learnm:HOVER{
+	BACKGROUND:BLACK;
+	color: white;
+	border-color: #000;
+}
 
 
 .minimizer{
