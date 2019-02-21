@@ -587,8 +587,7 @@ footer {
 	font-size: 15px;
 	display: inline-block;
   }
-  h3.mobile {
-  }
+
   div.relate {
 	/* grid-template-columns:  1fr 1fr; */
   
@@ -603,8 +602,7 @@ footer {
 	display: grid;
   }
   
-  footer .fab {
-  }
+
   .email {
 	color: inherit;
 	display: inline-block;
@@ -695,11 +693,11 @@ footer {
 
 .sidebar .two{
 	background:black;
-	height:100vh;
+
 	display: inline;
 	text-align: center;
 	top:-5px;
-	width:100vw;
+
 }
 .two div{
 	display:grid;

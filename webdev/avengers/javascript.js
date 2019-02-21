@@ -1,8 +1,8 @@
 var x=document.getElementById("time");
 
 var dob=document.getElementById("bday");
-var myfunction=function (){
-var bday=new Date(2005,05,20,21,45,0);
+function  myfunction (){
+var bday=new Date(dob.value);
 var d=new Date();
 var age=(d.getTime()-bday.getTime());
 var nbday=new Date(2019,05,20,21,45,0);
@@ -14,6 +14,7 @@ var agemn=(age/(1000*60)).toFixed(0);
 var ages=(age/(1000)).toFixed(0);
 x.innerHTML=agey+" Years<br>"+agem+" Months<br>"+aged+" Days<br>"+ageh+" Hours <br>"+agemn+" Minutes<br>"+ages+" Seconds";
 x.style.textAlign="center";
+console.log(agem);
 }
 
 

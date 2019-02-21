@@ -2,53 +2,55 @@
 body{
 
 	margin:  0px;
+	overflow:hidden;
 }
 *{
 	 box-sizing: border-box;
-	 font-family: "Noto sans",sans-serif;
+	 font-family:'Roboto',sans-serif;
+	box-sizing:border-box;
      /* overflow:hidden; */
      /* display:  grid; */
 }
-.container{
-	width: 100vw;
-	height: 100vh;
-	display:  grid;
-	grid-template-columns: 1fr 1fr 1fr;
+#bday{
+	width:70vmin;
+	height: 8vmin;
+	
 }
-.clock{
-	/* overflow:  hidden; */
-	/* transform: rotate(100deg); */
-	width: 50vh;
-	text-align:  center;
-	align-self: center;
-	/* position:  absolute; */
-	border-radius:50%;
-	background: #ffffff;
-	height: 50vh;
-	margin:25vh;
-	color: #170c0c;
-	color: black;
-	min-height: 250px;
+#enter{
+	background: rgb(12, 58, 110);
+	color: white;
+	border:none;
+height:8vmin;
+padding:10px 20px;
+position: relative;
+top:2px;
+left:0.6px;
+text-transform: capitalize;
+border-radius: 4px;
+z-index: 2;
+font-size:20px;
 }
-#time{
-	/* background: #1a581c; */
-	width: 80%;
-	margin-top: 30%;
-	margin-left: 10%;
-	height:  100px;
+#enter:hover{
+	background: #2c097c;
+	cursor: pointer;
 }
-.rotorh{
-width: 4px;
-height: 25vh;
-position: absolute;
-top: 25vh;
-background: black;
-right: 50vw;}
+#got div{
+	display: inline;
+	margin:auto;
+}
+#got  h1{
+	color:white;
+	font-weight: 200;
+	text-align:center; 
+}
+div#got{
+	margin-left: auto;
+width:100vw;
+height: 100vh;
+display: grid;
+justify-content: center;
 
-@keyframes rotate{
-from{
-	transform:rotate-x(0deg);
-}
-to{
-transform:rotate-x(30deg)}
-}
+align-content:center;
+background-image: url('ss.jpg');
+background-size:100px;
+margin-right:auto;}
