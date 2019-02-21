@@ -46,11 +46,12 @@ font-size:20px;
 div#got{
 	margin-left: auto;
 width:100vw;
-height: 100vh;
+height: 60vmin;
 display: grid;
 justify-content: center;
-
+object-fit: cover;
 align-content:center;
 background-image: url('ss.jpg');
 background-size:100px;
+background-repeat: repeat;
 margin-right:auto;}
