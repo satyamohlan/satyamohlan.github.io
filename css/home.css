@@ -293,16 +293,15 @@ img.me{
 }
 .prolink{
 	background-image: linear-gradient(to right,#F44336,#EC407A);
-	width:48vw;
+	width:max-content;
 	min-width:400px;
-	height:18vw;
-	min-height: 200px;
-	display:grid;
+	height:max-content;
+		display:grid;
 	grid-auto-columns: max-content;
 	grid-auto-rows: max-content;
 	justify-content: center;
 	margin-top:50px;
-	padding: 10px 0px;
+	padding: 20px ;
 	margin-left: auto;
 	margin-right: auto;
 	color:white;
