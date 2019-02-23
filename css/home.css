@@ -294,7 +294,6 @@ img.me{
 .prolink{
 	background-image: linear-gradient(to right,#F44336,#EC407A);
 	width:max-content;
-	min-width:400px;
 	height:max-content;
 		display:grid;
 	grid-auto-columns: max-content;

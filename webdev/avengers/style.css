@@ -38,7 +38,7 @@ font-size:20px;
 	display: inline;
 	margin:auto;
 }
-#got  h1{
+#got  h1,#got p{
 	color:white;
 	font-weight: 200;
 	text-align:center; 
