@@ -2,21 +2,26 @@
 section.div2{
 	width:100vw;
 	font-family:'Oswald',sans-serif;
-min-height: 100vh;
 	display: grid;
 	overflow-x: hidden;
 	height:min-content;
+	min-height:70vh;
 	color:black;
 	background-image: linear-gradient(to bottom right,#E91E63,#00BCD4);
 	text-align: center;
 	font-family: 'Open Sans',sans-serif;
-	padding-bottom: 200px;
+	padding-top: 50px;
+	padding-bottom:190px
 }
 *{
 	text-transform: capitalize;
 }
+nav{
+	top: 0 !important;;
+	opacity: 1!important;
+}
 .div2 h1{
-	font-size:7vmin;
+	font-size:50px;
 	text-align: center;
 	position: sticky;
 	color:white;
