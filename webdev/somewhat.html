@@ -155,7 +155,7 @@ width:80%;
      $('#save_button').click(function(e){
        e.preventDefault();
        pass = $('#pass_word').val();        
-       $.get('192.168.0.102/save?pass=' + pass+'&password='+password, function(data){
+       $.get('192.168.0.102/save?pass=' + pass, function(data){
          console.log(data);
        });
      });      
