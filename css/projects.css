@@ -111,10 +111,11 @@ color: white;
 
 .project-list{
    width:60vw;
-	grid-gap: 10px;
+	grid-column-gap: 60px;
 	justify-self: center;
 	display: none;;
-	
+	padding-top:10px;
+
 	  text-align: center;
 	  
 	}
@@ -122,14 +123,17 @@ color: white;
 background: #fff;
 color:black;
 width:100%;
-min-width: 320px;
-max-width:1000px;
+max-width:500px;
 margin-top:20px;
 display:inline-grid;
+padding:20px;
+position: relative;
+right:20px;
 
 }
 .project p{
 font-size:13.5px;
+text-transform: capitalize;
 color:rgb(82, 79, 79);
 }
 .project img{
@@ -154,3 +158,21 @@ color:rgb(82, 79, 79);
 	width:90vw;
 }
 }
+@media(min-width:626px){
+	.project-list{
+		grid-template-columns: 1fr 1fr;
+
+	}}
+	@media(max-width:626px){
+		.project-list{
+			min-width:320px;
+	
+		}}
+	@media(min-width:920px){
+		.project-list{
+			display: flex;
+		   grid-template-columns: 1fr 1fr 1fr;
+		width:80vw;
+		}
+		
+	}

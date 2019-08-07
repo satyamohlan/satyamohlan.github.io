@@ -8,7 +8,7 @@ if(ex==false){
       ex=true;
     }
 else{
-    $(".project-list")[s].style.display="inline";
+    $(".project-list")[s].style.display="grid";
     $("div.plus")[s].classList.add("minus");
 
 

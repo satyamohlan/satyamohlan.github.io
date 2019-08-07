@@ -336,7 +336,8 @@ img.me:hover {
 	width: 100%;
 	height: 100vh;
 	object-fit: cover;
-	opacity: .3
+	opacity: .3;
+	object-position: 100% 75%;
 }
 
 .back {
