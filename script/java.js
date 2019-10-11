@@ -1,3 +1,4 @@
+
 document.getElementById("nava").addEventListener("click",navys);
 var show=false;
 function navys() {

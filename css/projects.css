@@ -15,22 +15,7 @@ section.div2{
 }
 *{
 	text-transform: capitalize;
-}
-nav{
-	top: 0 !important;;
-	opacity: 1!important;
-}
-.div2 h1{
-	font-size:50px;
-	text-align: center;
-	position: sticky;
-	color:white;
-	height: min-content;
-	
-}
-.allpro{
-	display: grid;
-	grid-gap: 10px;
+
 	height: min-content;
 }
 
@@ -59,9 +44,10 @@ nav{
 	display:grid;
 	height: min-content;
 
+
 }
 .close{
-width:70vw;
+width:75vw;
 height: 50px;
 padding-bottom: 10px;
 	font-family: monospace;
@@ -117,7 +103,7 @@ color: white;
 	padding-top:10px;
 
 	  text-align: center;
-	  
+	  padding-bottom:20px;
 	}
 .project{
 background: #fff;
@@ -170,9 +156,15 @@ color:rgb(82, 79, 79);
 		}}
 	@media(min-width:920px){
 		.project-list{
-			display: flex;
+         
 		   grid-template-columns: 1fr 1fr 1fr;
-		width:80vw;
+		width:60vw;
 		}
 		
+	}
+	@media(min-width:1300px){
+		.project-list{
+			grid-template-columns: 1fr 1fr 1fr 1fr;
+			width:70vw;
+					}
 	}
