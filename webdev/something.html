@@ -8,8 +8,9 @@
         <h1>Detect Faces:</h1>
 Enter the URL to an image that includes a face or faces, then click
 the <strong>Analyze face</strong> button.<br><br>
-Image to analyze: <input type="text" name="inputImage" id="inputImage"
-    value="https://upload.wikimedia.org/wikipedia/commons/c/c3/RH_Louise_Lillian_Gish.jpg" />
+Image to analyze: 
+<input type="text" name="inputImage" id="inputImage"
+    value="https://upload.wikimedia.org/wikipedia/commons/c/c3/RH_Louise_Lillian_Gish.jpg"/>
 <button onclick="processImage()">Analyze face</button><br><br>
 <div id="wrapper" style="width:1020px; display:table;">
     <div id="jsonOutput" style="width:600px; display:table-cell;">
@@ -63,6 +64,12 @@ Image to analyze: <input type="text" name="inputImage" id="inputImage"
             .done(function(data) {
                 // Show formatted JSON on webpage.
                 $("#responseTextArea").val(JSON.stringify(data, null, 2));
+                face=data[0].faceAttributes;
+                gender=face.gender;
+                age=face.age;
+                emotion=face.emotion;
+
+
             })
         
             .fail(function(jqXHR, textStatus, errorThrown) {
