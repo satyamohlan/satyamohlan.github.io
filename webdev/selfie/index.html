@@ -1,79 +1,49 @@
 <!DOCTYPE html>
 <html>
-  <head>
-  </head>
-  <body onload="init();">
-    <h1>Take a snapshot of the current video stream</h1>
-   Click on the Start WebCam button.
-     <p>
-    <button onclick="startWebcam();">Start WebCam</button>
-    <button onclick="stopWebcam();">Stop WebCam</button> 
-       <button onclick="snapshot();">Take Snapshot</button> 
-    </p>
-    <video onclick="snapshot(this);" width=400 height=400 id="video" controls autoplay></video>
-  <p>
 
-        Screenshots : <p>
-      <canvas  id="myCanvas" width="400" height="350"></canvas>  
-  </body>
-  <script>
-      //--------------------
-      // GET USER MEDIA CODE
-      //--------------------
-          navigator.getUserMedia = ( navigator.getUserMedia ||
-                             navigator.webkitGetUserMedia ||
-                             navigator.mozGetUserMedia ||
-                             navigator.msGetUserMedia);
+<head>
 
-      var video;
-      var webcamStream;
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-      function startWebcam() {
-        if (navigator.getUserMedia) {
-           navigator.getUserMedia (
+    <title>Demo: Take a Selfie With JavaScript</title>
 
-              // constraints
-              {
-                 video: true,
-                 audio: false
-              },
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/styles.css">
 
-              // successCallback
-              function(localMediaStream) {
-                  video = document.querySelector('video');
-                 video.src = window.URL.createObjectURL(localMediaStream);
-                 webcamStream = localMediaStream;
-              },
+</head>
+<body>
 
-              // errorCallback
-              function(err) {
-                 console.log("The following error occured: " + err);
-              }
-           );
-        } else {
-           console.log("getUserMedia not supported");
-        }  
-      }
 
-      function stopWebcam() {
-          webcamStream.stop();
-      }
-      //---------------------
-      // TAKE A SNAPSHOT CODE
-      //---------------------
-      var canvas, ctx;
+<h3>Demo: Take a Selfie With JavaScript</h3>
 
-      function init() {
-        // Get the canvas and obtain a context for
-        // drawing in it
-        canvas = document.getElementById("myCanvas");
-        ctx = canvas.getContext('2d');
-      }
+<div class="container">
 
-      function snapshot() {
-         // Draws current image from the video element into the canvas
-        ctx.drawImage(video, 0,0, canvas.width, canvas.height);
-      }
+  <div class="app">
 
-  </script>
+    <a href="#" id="start-camera" class="visible">Touch here to start the app.</a>
+    <video id="camera-stream"></video>
+    <img id="snap">
+
+    <p id="error-message"></p>
+
+    <div class="controls">
+      <a href="#" id="delete-photo" title="Delete Photo" class="disabled"><i class="material-icons">delete</i></a>
+      <a href="#" id="take-photo" title="Take Photo"><i class="material-icons">camera_alt</i></a>
+      <a href="#" id="download-photo" download="selfie.png" title="Save Photo" class="disabled"><i class="material-icons">file_download</i></a>  
+    </div>
+
+    <!-- Hidden canvas element. Used for taking snapshot of video. -->
+    <canvas></canvas>
+
+  </div>
+
+</div>
+
+
+<script src="assets/js/script.js"></script>
+
+</body>
+
 </html>
