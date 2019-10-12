@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function () {
         delete_photo_btn = document.querySelector('#delete-photo'),
         download_photo_btn = document.querySelector('#download-photo'),
         error_message = document.querySelector('#error-message');
-
+    
 
     // The getUserMedia interface is used for handling camera input.
     // Some browsers need a prefix so here we're covering all the options
@@ -121,6 +121,7 @@ document.addEventListener('DOMContentLoaded', function () {
         // Here we're using a trick that involves a hidden canvas element.  
 
         var hidden_canvas = document.querySelector('canvas'),
+            
             context = hidden_canvas.getContext('2d');
 
         var width = video.videoWidth,
