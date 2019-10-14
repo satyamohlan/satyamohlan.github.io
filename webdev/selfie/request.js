@@ -10,7 +10,7 @@ const constraints = {
 captureButton.addEventListener('click', () => {
   context.drawImage(player, 0, 0, canvas.width, canvas.height);
   x=context.getImageData(0,0,canvas.width,canvas.height);
-  x=convertCanvasToImage(context);
+  x=convertCanvasToImage(canvas);
   
   // Stop all video streams.
  
