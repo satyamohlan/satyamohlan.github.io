@@ -9,9 +9,9 @@ const constraints = {
 
 captureButton.addEventListener('click', () => {
   context.drawImage(player, 0, 0, canvas.width, canvas.height);
-  x=context.getImageData(0,0,canvas.width,canvas.height);
-  x=convertCanvasToImage(canvas);
-  
+  //x=context.getImageData(0,0,canvas.width,canvas.height);
+  x=convertCanvasToImage(canvas).src;
+  console.log(x);
   // Stop all video streams.
  
 });
@@ -75,7 +75,7 @@ function processImage(stream) {
 };
 function convertCanvasToImage(canvas) {
 	var image = new Image();
-image.src = canvas.toDataURL("image/png");
+image.src = canvas.toDataURL("image/jpg");
 
 	return image;
 }
