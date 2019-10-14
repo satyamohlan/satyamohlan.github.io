@@ -1,25 +1,28 @@
 const player = document.getElementById('player');
-const canvas = document.getElementById('canvas');
+const canvas = document.getElementById('canva');
 const context = canvas.getContext('2d');
 const captureButton = document.getElementById('capture');
-
+var x;
 const constraints = {
   video: true,
 };
 
 captureButton.addEventListener('click', () => {
   context.drawImage(player, 0, 0, canvas.width, canvas.height);
+  x=context.getImageData(0,0,canvas.width,canvas.height);
+  x=convertCanvasToImage(context);
   
   // Stop all video streams.
- x= player.srcObject.getVideoTracks().forEach(track => track.stop());
+ 
 });
 
 navigator.mediaDevices.getUserMedia(constraints)
   .then((stream) => {
     // Attach the video stream to the video element and autoplay.
     player.srcObject = stream;
+
   });
-function processImage() {
+function processImage(stream) {
     // Replace <Subscription Key> with your valid subscription key.
     var subscriptionKey = "7741b0a689ee464cab01a73e817e6220";
 
@@ -51,7 +54,7 @@ function processImage() {
         type: "POST",
 
         // Request body.
-        data: '{"url": ' + '"' + sourceImageUrl + '"}',
+        data:sourceImageUrl,
     })
 
     .done(function(data) {
@@ -70,3 +73,9 @@ function processImage() {
         alert(errorString);
     });
 };
+function convertCanvasToImage(canvas) {
+	var image = new Image();
+image.src = canvas.toDataURL("image/png");
+
+	return image;
+}
