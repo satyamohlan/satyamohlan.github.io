@@ -8,7 +8,7 @@
         Enter the URL to an image that includes a face or faces, then click
         the <strong>Analyze face</strong> button.<br><br>
         Image to analyze: <input type="text" name="inputImage" id="inputImage"
-            value="https://upload.wikimedia.org/wikipedia/commons/c/c3/RH_Louise_Lillian_Gish.jpg" />
+            value="https://upload.wikimedia.org/wikipedia/commons/0/01/Bill_Gates_July_2014.jpg" />
         <button onclick="processImage()">Analyze face</button><br><br>
         <div id="wrapper" style="width:1020px; display:table;">
             <div id="jsonOutput" style="width:600px; display:table-cell;">
@@ -41,29 +41,28 @@
                 // Display the image.
                 var sourceImageUrl = document.getElementById("inputImage").value;
                 document.querySelector("#sourceImage").src = sourceImageUrl;
-            
+               // Perform the REST API call.
+        $.ajax({
+            url: uriBase + "?" + $.param(params),
+    
+            // Request headers.
+            beforeSend: function(xhrObj){
+                xhrObj.setRequestHeader("Content-Type","application/json");
+                xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key", subscriptionKey);
+            },
+    
+            type: "POST",
+    
+            // Request body.
+            data: '{"url": ' + '"' + sourceImageUrl + '"}',
+        })
                 // Perform the REST API call.
-                $.ajax({
-                    url: uriBase + "?" + $.param(params),
-            
-                    // Request headers.
-                    beforeSend: function(xhrObj){
-                        xhrObj.setRequestHeader("Content-Type","application/json");
-                        xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key", subscriptionKey);
-                    },
-            
-                    type: "POST",
-            
-                    // Request body.
-                    data: '{"url": ' + '"' + sourceImageUrl + '"}',
-                })
+                
             
                 .done(function(data) {
                     // Show formatted JSON on webpage.
                     $("#responseTextArea").val(JSON.stringify(data, null, 2));
-                })
-            
-                .fail(function(jqXHR, textStatus, errorThrown) {
+                }) .fail(function(jqXHR, textStatus, errorThrown) {
                     // Display error message.
                     var errorString = (errorThrown === "") ?
                         "Error. " : errorThrown + " (" + jqXHR.status + "): ";

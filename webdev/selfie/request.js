@@ -3,16 +3,18 @@ const canvas = document.getElementById('canva');
 const context = canvas.getContext('2d');
 const captureButton = document.getElementById('capture');
 var x;
+var y;
+var byteArr;
 const constraints = {
   video: true,
 };
 
 captureButton.addEventListener('click', () => {
+    
   context.drawImage(player, 0, 0, canvas.width, canvas.height);
   //x=context.getImageData(0,0,canvas.width,canvas.height);
-  x=convertCanvasToImage(canvas).src;
-  console.log(x);
-  // Stop all video streams.
+  x=convertCanvasToImage(canvas);
+  y=tobin(x);
  
 });
 
@@ -39,7 +41,8 @@ function processImage(stream) {
     };
 
     // Display the image.
-    var sourceImageUrl =x;
+
+    console.log(y);
 
     // Perform the REST API call.
     $.ajax({
@@ -54,7 +57,8 @@ function processImage(stream) {
         type: "POST",
 
         // Request body.
-        data:sourceImageUrl,
+        body:[y],
+  
     })
 
     .done(function(data) {
@@ -74,8 +78,22 @@ function processImage(stream) {
     });
 };
 function convertCanvasToImage(canvas) {
-	var image = new Image();
-image.src = canvas.toDataURL("image/jpg");
 
-	return image;
+return canvas.toDataURL("image/jpeg");
+
+}
+function tobin(x){
+var dataUri =x;
+var data = dataUri.split(',')[1];
+var mimeType = dataUri.split(';')[0].slice(5)
+
+var bytes = window.atob(data);
+var buf = new ArrayBuffer(bytes.length);
+var byteArr = new Uint8Array(buf);
+
+for (var i = 0; i < bytes.length; i++) {
+    byteArr[i] = bytes.charCodeAt(i);
+}
+
+return byteArr;
 }
