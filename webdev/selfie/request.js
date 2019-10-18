@@ -34,8 +34,8 @@ function processImage(stream) {
         "returnFaceId": "true",
         "returnFaceLandmarks": "false",
         "returnFaceAttributes":
-            "age,gender,headPose,smile,emotion," +
-            "occlusion,accessories,blur,exposure,noise"
+            "age,gender,headPose,smile,facialHair,glasses,emotion," +
+            "hair,makeup,occlusion,accessories,blur,exposure,noise"
     };
 
     // Display the image.
