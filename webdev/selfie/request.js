@@ -2,6 +2,7 @@ const player = document.getElementById('player');
 const canvas = document.getElementById('canva');
 const context = canvas.getContext('2d');
 const captureButton = document.getElementById('capture');
+const imga=document.getElementById('src');
 var x;
 var y;
 var byteArr;
@@ -9,14 +10,7 @@ const constraints = {
   video: true,
 };
 
-captureButton.addEventListener('click', () => {
-    
-  context.drawImage(player, 0, 0, canvas.width, canvas.height);
-  //x=context.getImageData(0,0,canvas.width,canvas.height);
-  x=convertCanvasToImage(canvas);
-  y=tobin(x);
- 
-});
+
 
 navigator.mediaDevices.getUserMedia(constraints)
   .then((stream) => {
@@ -25,6 +19,10 @@ navigator.mediaDevices.getUserMedia(constraints)
 
   });
 function processImage(stream) {
+    context.drawImage(player, 0, 0, canvas.width, canvas.height);
+  //x=context.getImageData(0,0,canvas.width,canvas.height);
+  x=tobin(canvas.toDataURL("image/jpeg", 0.75));
+
     // Replace <Subscription Key> with your valid subscription key.
     var subscriptionKey = "73f95b2732df445fac4db16f7e562e4f";
 
@@ -42,7 +40,7 @@ function processImage(stream) {
 
     // Display the image.
 
-    console.log(y);
+    console.log(x);
 
     // Perform the REST API call.
     $.ajax({
@@ -57,13 +55,13 @@ function processImage(stream) {
         type: "POST",
 
         // Request body.
-        body:[y],
-  
+        data:x,
+        processData:false
     })
 
     .done(function(data) {
         // Show formatted JSON on webpage.
-       console.log(data);
+        $("#responseTextArea").val(JSON.stringify(data, null, 2));
     })
 
     .fail(function(jqXHR, textStatus, errorThrown) {
