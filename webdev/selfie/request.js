@@ -26,7 +26,7 @@ navigator.mediaDevices.getUserMedia(constraints)
   });
 function processImage(stream) {
     // Replace <Subscription Key> with your valid subscription key.
-    var subscriptionKey = "7741b0a689ee464cab01a73e817e6220";
+    var subscriptionKey = "73f95b2732df445fac4db16f7e562e4f";
 
     var uriBase =
         "https://westcentralus.api.cognitive.microsoft.com/face/v1.0/detect";
