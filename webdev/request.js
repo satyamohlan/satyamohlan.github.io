@@ -15,11 +15,16 @@ const constraints = {
 navigator.mediaDevices.getUserMedia(constraints)
   .then((stream) => {
     // Attach the video stream to the video element and autoplay.
+    canvas.width=stream.getTracks()[0].getSettings().width;
+  
+    canvas.height=stream.getTracks()[0].getSettings().height;
     player.srcObject = stream;
-
+  
   });
 function processImage(stream) {
     $("#responseTextArea").val('');
+    player.style.display='none';
+    canvas.style.display='block';
     context.drawImage(player, 0, 0, canvas.width, canvas.height);
     
   //x=context.getImageData(0,0,canvas.width,canvas.height);
@@ -69,6 +74,7 @@ function processImage(stream) {
         context.strokeStyle = "red";
         context.rect(recto.left,recto.top,recto.width,recto.height);
         context.stroke();
+      
     })
 
     .fail(function(jqXHR, textStatus, errorThrown) {
