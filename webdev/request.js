@@ -19,9 +19,11 @@ navigator.mediaDevices.getUserMedia(constraints)
 
   });
 function processImage(stream) {
+    $("#responseTextArea").val('');
     context.drawImage(player, 0, 0, canvas.width, canvas.height);
+    
   //x=context.getImageData(0,0,canvas.width,canvas.height);
-  x=tobin(canvas.toDataURL("image/jpeg", 0.75));
+  x=tobin(canvas.toDataURL());
 
     // Replace <Subscription Key> with your valid subscription key.
     var subscriptionKey = "73f95b2732df445fac4db16f7e562e4f";
@@ -40,7 +42,6 @@ function processImage(stream) {
 
     // Display the image.
 
-    console.log(x);
 
     // Perform the REST API call.
     $.ajax({
@@ -60,8 +61,14 @@ function processImage(stream) {
     })
 
     .done(function(data) {
+        var recto=data[0].faceRectangle
         // Show formatted JSON on webpage.
         $("#responseTextArea").val(JSON.stringify(data, null, 2));
+        context.beginPath();
+        context.lineWidth = "4";
+        context.strokeStyle = "red";
+        context.rect(recto.left,recto.top,recto.width,recto.height);
+        context.stroke();
     })
 
     .fail(function(jqXHR, textStatus, errorThrown) {
@@ -75,11 +82,7 @@ function processImage(stream) {
         alert(errorString);
     });
 };
-function convertCanvasToImage(canvas) {
 
-return canvas.toDataURL("image/jpeg");
-
-}
 function tobin(x){
 var dataUri =x;
 var data = dataUri.split(',')[1];
