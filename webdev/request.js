@@ -15,9 +15,7 @@ const constraints = {
 navigator.mediaDevices.getUserMedia(constraints)
   .then((stream) => {
     // Attach the video stream to the video element and autoplay.
-    canvas.width=stream.getTracks()[0].getSettings().width;
-  
-    canvas.height=stream.getTracks()[0].getSettings().height;
+    console.log(stream.getTracks()[0].getSettings().width);
     player.srcObject = stream;
   
   });
@@ -40,6 +38,7 @@ function processImage(stream) {
     var params = {
         "returnFaceId": "true",
         "returnFaceLandmarks": "false",
+        "recognitionModel":"recognition_02",
         "returnFaceAttributes":
             "age,gender,headPose,smile,facialHair,glasses,emotion," +
             "hair,makeup,occlusion,accessories,blur,exposure,noise"
