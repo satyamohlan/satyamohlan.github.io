@@ -14,3 +14,21 @@ else{
 
     ex=false;
 }}
+$(window).on('load', function(){
+    $.instagramFeed({
+      'username': 'Ohlansatyam',
+      'container': "#instagram-feed1",    
+      'display_profile': true,
+      'display_biography': true,
+      'display_gallery': true,
+      'get_raw_json': true,
+
+      'callback': null,
+      'styling': false,
+      'items': 80,
+      'items_per_row': 1,
+      'margin': 1 
+  
+    })});
+    
+  

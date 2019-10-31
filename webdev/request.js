@@ -29,7 +29,7 @@ function processImage(stream) {
   x=tobin(canvas.toDataURL());
 
     // Replace <Subscription Key> with your valid subscription key.
-    var subscriptionKey = "73f95b2732df445fac4db16f7e562e4f";
+    var subscriptionKey = "3dc0e200face4fefb44e162ce54f03ab";
 
     var uriBase =
         "https://westcentralus.api.cognitive.microsoft.com/face/v1.0/detect";

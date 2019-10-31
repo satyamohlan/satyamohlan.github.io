@@ -24,7 +24,7 @@
 		'items': 8,
 		'items_per_row': 4,
 		'margin': 0.5,
-        'image_size': 640
+        'image_size': 1080
 	};
 
 	$.instagramFeed = function(options){
