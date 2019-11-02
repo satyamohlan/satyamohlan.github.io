@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ISS live tracking</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
+    integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+    crossorigin=""/>
+ 
+    <style>
+            /* Always set the map height explicitly to define the size of the div
+             * element that contains the map. */
+            #map {
+              height: 100%;
+            }
+            /* Optional: Makes the sample page fill the window. */
+            html, body {
+              height: 100%;
+              margin: 0;
+              padding: 0;
+            }
+          </style> 
+</head>
+<body>
+        <div id='myMap' style='width: 100vw; height: 100vh;'></div>
+
+  
+</body>
+<script>
+
+setInterval(loadMapScenario,5000)
+    async function getiss(){
+    requrl='https://api.wheretheiss.at/v1/satellites/25544';
+    const response=await fetch(requrl);
+    const data=await response.json();
+    console.log(data);
+    const {longitude,latitude}=data;
+    return [longitude,latitude];}
+    var map;
+    async function loadMapScenario() {
+        x=await getiss();
+        let first=true;
+        if(first==true){
+                var map = new Microsoft.Maps.Map(document.getElementById('myMap'), {
+                    /* No need to set credentials if already passed in URL */
+                    center: new Microsoft.Maps.Location(x[1],x[0]),
+                    mapTypeId: Microsoft.Maps.MapTypeId.road,
+                    zoom: 5
+                });
+                first=false;}
+                
+                var pushpin = new Microsoft.Maps.Pushpin(map.getCenter(), {
+                    icon: 'https://satyamohlan.github.io/images/iss.png',anchor: new Microsoft.Maps.Point(x[1],x[0]),size:40
+                });
+                map.entities.push(pushpin);}
+</script>
+<script type='text/javascript' src='https://www.bing.com/api/maps/mapcontrol?key=AnjwZ9Um3kaw6epvDGSLK4spVLBtrJEHprfZS4pO9t_5upqyg0hwrSJPpsb2dN94&callback=loadMapScenario' async defer></script>
+</html>
