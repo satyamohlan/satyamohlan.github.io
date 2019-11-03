@@ -39,9 +39,10 @@ setInterval(loadMapScenario,5000)
     const {longitude,latitude}=data;
     return [longitude,latitude];}
     var map;
+    let first=true;
     async function loadMapScenario() {
         x=await getiss();
-        let first=true;
+        
         if(first==true){
                 var map = new Microsoft.Maps.Map(document.getElementById('myMap'), {
                     /* No need to set credentials if already passed in URL */
