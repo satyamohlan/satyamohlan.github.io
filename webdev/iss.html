@@ -1,43 +1,251 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head>  
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>ISS live tracking</title>
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
-    integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
-    crossorigin=""/>
- 
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
     <style>
             /* Always set the map height explicitly to define the size of the div
              * element that contains the map. */
-            #map {
-              height: 100%;
-            }
             /* Optional: Makes the sample page fill the window. */
-            html, body {
+             body {
               height: 100%;
               margin: 0;
               padding: 0;
+              font-family: 'Roboto', sans-serif;
+             }
+             .content{
+                display: grid;
+              grid-template-columns: max-content max-content;
             }
+             
+            
+            #myMap{
+                width:64vmax;
+                max-width:100vw;
+
+                height:40vmax;
+                margin: 30px;
+                margin-top:50px;
+            }
+            h1{
+                font-weight: 300;
+                text-align: center;
+                font-size: 40px;
+  
+            }
+.info{
+    justify-content: center;
+}
+            
+            table,tr,th,td{
+                margin: auto;
+  border: #b3afaf solid;
+  border-width: 1px 0px;
+
+  border-collapse:collapse;
+  }
+td{    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif}
+
+th{ background-color: #4CAF50;
+height:30px;
+padding:2px 2px;
+color:white;
+font-family: 'Lato', sans-serif;
+font-size:17px;
+
+padding-left:12px;
+}
+tr{width:10px;}
+
+th.first{width:175px;}
+td.first{padding-left:14px;font-weight: bold;}
+tr{height:35px;}
+    
+
+th.third{width:30px;}
+td.second{width:150px;
+border-right-width:0px;}
+
+td.third{
+  font-style:italic;
+  border-left-width:0px;
+}
+footer {
+	padding-top: 100px;
+	bottom: 0;
+	background: #fff;
+	color: #000
+}
+
+.whole p {
+	text-align: center;
+	font-family: sans-serif;
+	display: inline-block;
+	font-size: 15px;
+	color: inherit
+}
+
+.imoti {
+	position: relative;
+	text-align: center
+}
+
+footer .fab {
+	padding: 10px;
+	margin-left: 10px;
+	font-size: 20px;
+	text-align: center;
+	text-decoration: none;
+	transition: .5s;
+	color: inherit;
+	background: inherit;
+	border: none
+}
+
+.fa-youtube:hover {
+	color: red
+}
+
+.fa-twitter:hover {
+	color: #03a9f4
+}
+
+.navigator {
+	margin: 20px;
+	margin-bottom: 15px;
+	text-align: center;
+	width: 400px;
+	justify-self: center;
+	align-self: center;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr
+}
+
+.whole a.link1 { 
+	color: inherit;
+	text-decoration: none;
+	position: relative;
+	transition: .5s
+}
+
+a.link1:hover {
+	color: #000
+}
+
+.link1 {
+	font-size: 17px;
+	text-align: center;
+	display: inline;
+	font-family: Oswald, sans-serif
+}
+
+.contact.us {
+	font-weight: 100;
+	font-family: roboto, sans-serif;
+	font-size: 15px;
+	display: inline-block
+}
+
+.whole {
+	display: grid;
+	position: relative;
+	margin-left: 0;
+	width: 100%
+}
+
+.copyright {
+	text-align: center;
+	width: 100%
+}
+
+
+@media(max-width:1000px){
+                .content{
+                    grid-template-columns: 1fr;
+                }
+                #myMap{
+                    justify-self: center;
+                    width:80vmax;
+                    height:60vmax;                }
+            }
+
           </style> 
 </head>
 <body>
-        <div id='myMap' style='width: 100vw; height: 100vh;'></div>
-
-  
+    <div class="content">   <div id='myMap'></div>
+    <div class="info">
+            <h1>ISS live tracking system</h1>
+    <table>
+            <tbody>
+                
+                <tr>
+                    <td class="first">longitude</td>
+                                <td class="third"id='lon' ></td>
+                </tr>
+                <tr>
+                    <td class="first">latitude</td>
+                                       <td class="third"id=lat></td>
+                </tr>
+                 <tr>
+                    <td class="first">altitude</td>
+                                       <td class="third"id=alt></td>
+                </tr>
+                 <tr>
+                    <td class="first">velocity</td>
+                                  <td class="third" id='vel'></td>
+                </tr>
+      
+                </tbody>
+                </table>
+                
+                </div>
+                </div>
+                <footer>
+ 
+                        <div class="whole" id="l1">
+                          <div class="navigator">
+                            <a href="index.html" class="link1">Home</a>
+                            <a href="projects.html" class="link1">Projects</a>
+                            <a href="#" class="link1">Resume</a>
+                            <a href="contac6tme.html" class="link1">Contact Me</a>
+                            
+                          </div>
+                          <p style="margin:0px;font-size:13px;">follow us at:</p>
+                          <div class="imoti">
+                              <a class="fab fa-twitter"target="" href="https://twitter.com/satyam_ohlan" alt="twitter"></a>
+                              <a class="fab fa-instagram" target="" alt="instagram" href="https://www.instagram.com/ohlansatyam/"></a>
+                     
+                              <a class="fab fa-github" href="https://github.com/satyamohlan" alt="github" target=""></a>
+                              <a class="fab fa-youtube" href="" alt="youtube"></a>
+                          </div>
+                        
+                          <p class="copyright">©SatyamOhlan 2019</p>
+                        </div>
+                    
+                      </footer>
 </body>
 <script>
 
-setInterval(loadMapScenario,1000)
+  
+
+    setInterval(loadMapScenario,1000);
     async function getiss(){
     requrl='https://api.wheretheiss.at/v1/satellites/25544';
     const response=await fetch(requrl);
+  //  const r2=await fetch(requrl+'?'+'timestamp='+parseInt(document.cookie.split('=')[1]));
+   // x=await r2.json();
     const data=await response.json();
-    console.log(data);
-    const {longitude,latitude}=data;
-    return [longitude,latitude];}
+    document.getElementById('lat').innerHTML=JSON.stringify(data.latitude);
+    document.getElementById('lon').innerHTML=JSON.stringify(data.longitude);
+    document.getElementById('vel').innerHTML=JSON.stringify(data.velocity)+'km/h';
+    document.getElementById('alt').innerHTML=JSON.stringify(data.altitude)+'km';
+
+    const {longitude,latitude,altitude}=data;
+    return [longitude,latitude,altitude];}
     var map;
     let first=true;
     async function loadMapScenario() {
@@ -45,10 +253,9 @@ setInterval(loadMapScenario,1000)
     
         if(first==true){
                  map = new Microsoft.Maps.Map(document.getElementById('myMap'), {
-                    /* No need to set credentials if already passed in URL */
                     center: new Microsoft.Maps.Location(x[1],x[0]),
-                    mapTypeId: Microsoft.Maps.MapTypeId.road,
-                    zoom: 5
+                    mapTypeId: Microsoft.Maps.MapTypeId.aerial,
+                    zoom: 3
                 });
                 first=false;}
 
@@ -56,10 +263,13 @@ setInterval(loadMapScenario,1000)
                         if (pushpin instanceof Microsoft.Maps.Pushpin) {
                             map.entities.removeAt(0);
                         }
-                var pushpin = new Microsoft.Maps.Pushpin({"latitude":x[1],"longitude":x[0],"altitude":0,"altitudeReference":-1}, {
+                var pushpin = new Microsoft.Maps.Pushpin({"latitude":x[1],"longitude":x[0],"altitude":x[2],"altitudeReference":-1}, {
                     icon: 'https://satyamohlan.github.io/images/iss.png',anchor: new Microsoft.Maps.Point(50, 50),size:40
                 });
-                map.entities.push(pushpin);}
+                map.entities.push(pushpin);
+               
+                }
+   
 </script>
 <script type='text/javascript' src='https://www.bing.com/api/maps/mapcontrol?key=AnjwZ9Um3kaw6epvDGSLK4spVLBtrJEHprfZS4pO9t_5upqyg0hwrSJPpsb2dN94&callback=loadMapScenario' async defer></script>
 </html>
