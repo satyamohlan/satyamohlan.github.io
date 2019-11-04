@@ -30,7 +30,7 @@
 </body>
 <script>
 
-setInterval(loadMapScenario,5000)
+setInterval(loadMapScenario,1000)
     async function getiss(){
     requrl='https://api.wheretheiss.at/v1/satellites/25544';
     const response=await fetch(requrl);
@@ -42,18 +42,22 @@ setInterval(loadMapScenario,5000)
     let first=true;
     async function loadMapScenario() {
         x=await getiss();
-        
+    
         if(first==true){
-                var map = new Microsoft.Maps.Map(document.getElementById('myMap'), {
+                 map = new Microsoft.Maps.Map(document.getElementById('myMap'), {
                     /* No need to set credentials if already passed in URL */
                     center: new Microsoft.Maps.Location(x[1],x[0]),
                     mapTypeId: Microsoft.Maps.MapTypeId.road,
                     zoom: 5
                 });
                 first=false;}
-                
-                var pushpin = new Microsoft.Maps.Pushpin(map.getCenter(), {
-                    icon: 'https://satyamohlan.github.io/images/iss.png',anchor: new Microsoft.Maps.Point(x[1],x[0]),size:40
+
+                var pushpin = map.entities.get(0);
+                        if (pushpin instanceof Microsoft.Maps.Pushpin) {
+                            map.entities.removeAt(0);
+                        }
+                var pushpin = new Microsoft.Maps.Pushpin({"latitude":x[1],"longitude":x[0],"altitude":0,"altitudeReference":-1}, {
+                    icon: 'https://satyamohlan.github.io/images/iss.png',anchor: new Microsoft.Maps.Point(50, 50),size:40
                 });
                 map.entities.push(pushpin);}
 </script>
