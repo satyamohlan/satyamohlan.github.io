@@ -114,8 +114,13 @@ const constraints = {
 navigator.mediaDevices.getUserMedia(constraints)
   .then((stream) => {
     // Attach the video stream to the video element and autoplay.
-    canvas.width=stream.getTracks()[0].getSettings().width;
-    canvas.height=stream.getTracks()[0].getSettings().height;
+    if(window.innerHeight > window.innerWidth){
+    canvas.height=stream.getTracks()[0].getSettings().width;
+    canvas.width=stream.getTracks()[0].getSettings().height;}
+    else if(window.innerHeight < window.innerWidth){
+        canvas.width=stream.getTracks()[0].getSettings().width;
+    canvas.height=stream.getTracks()[0].getSettings().height;}
+    }
     player.srcObject = stream;
   
   });
