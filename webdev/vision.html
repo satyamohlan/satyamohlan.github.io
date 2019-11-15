@@ -173,7 +173,7 @@ function processImage(stream) {
 
     .done(function(data) {
         // Show formatted JSON on webpage.
-        var exec=false;
+        var exec=true;
         for(var i=0;i<data.categories.length;i++){
         if(data.categories[i].name.split('_')[0]=='people'||data.categories[i].name.split('_')[0]=='others'||data.categories[i].name.split('_')[0]=='plant'){
             exec=true
