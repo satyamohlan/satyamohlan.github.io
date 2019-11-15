@@ -127,9 +127,8 @@ navigator.mediaDevices.getUserMedia(constraints)
 function processImage(stream) {
     $("#responseTextArea").val('');
     player.style.display='none';
-    imga.style.display='block';
+    canvas.style.display='block';
     context.drawImage(player, 0, 0, canvas.width, canvas.height);
-    imga.src=canvas.toDataURL();
   //x=context.getImageData(0,0,canvas.width,canvas.height);
   x=tobin(canvas.toDataURL());
 
