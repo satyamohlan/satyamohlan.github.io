@@ -21,7 +21,9 @@
   background: #eee;
   border-radius: 3px;
   border:none;
-  color: #999;
+  color: #322d2d;
+    text-transform: capitalize;
+    font-size: 15px;
   display: inline-block;
   height: 26px;
   line-height: 26px;
@@ -178,8 +180,8 @@ function processImage(stream) {
 
         if(exec==true){
             document.getElementById("tags").innerHTML='';
-            var para = document.createElement("span");                 // Create a <p> element
-            para.innerHTML ='Suggested:';   
+            var para = document.createElement("p");                 // Create a <p> element
+            para.innerHTML ='    Suggested:';   
             para.className='tag';           // Insert text
 
             document.getElementById("tags").appendChild(para);
@@ -199,8 +201,12 @@ function processImage(stream) {
             context.beginPath();
         context.lineWidth = "4";
         context.strokeStyle = RandomColor();
-        context.rect(recto.x,recto.y,recto.w,recto.h);
+        context.font = "20px comic sans ms";
+context.fillText(data.objects[k].object,recto.x,recto.y);
+        context.rect(recto.x,recto.y+10,recto.w,recto.h);
+        
         context.stroke();
+        
             }
         }
         function fetchResults(searchQuery) {
