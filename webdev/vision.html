@@ -8,7 +8,7 @@
        
         <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
         <style>
-            body {
+                 body {
   font: 12px/1.5 'Roboto', serif;
 
 }
@@ -35,8 +35,9 @@
 video{
     width: 100%;
 }
-
-
+#src{
+    width:100%;
+}
 
 .tags:hover {
   background-color: crimson;
@@ -120,9 +121,9 @@ navigator.mediaDevices.getUserMedia(constraints)
 function processImage(stream) {
     $("#responseTextArea").val('');
     player.style.display='none';
-    canvas.style.display='block';
+    imga.style.display='block';
     context.drawImage(player, 0, 0, canvas.width, canvas.height);
-    
+    imga.src=canvas.toDataURL();
   //x=context.getImageData(0,0,canvas.width,canvas.height);
   x=tobin(canvas.toDataURL());
 
