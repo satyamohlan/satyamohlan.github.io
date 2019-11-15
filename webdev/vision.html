@@ -114,7 +114,8 @@ const constraints = {
 navigator.mediaDevices.getUserMedia(constraints)
   .then((stream) => {
     // Attach the video stream to the video element and autoplay.
-    console.log(stream.getTracks()[0].getSettings().width);
+    canvas.width=stream.getTracks()[0].getSettings().width;
+    canvas.height=stream.getTracks()[0].getSettings().height;
     player.srcObject = stream;
   
   });
@@ -122,7 +123,6 @@ function processImage(stream) {
     $("#responseTextArea").val('');
     player.style.display='none';
     imga.style.display='block';
-    console.log(player);
     context.drawImage(player, 0, 0, canvas.width, canvas.height);
     imga.src=canvas.toDataURL();
   //x=context.getImageData(0,0,canvas.width,canvas.height);
