@@ -90,7 +90,8 @@ background:black;
 <div class="info">
 
         <h1 style='text-align: center; margin-right:20px'>Computer vision Prototype<br><button onclick="processImage()" id='support'>Analyze Image</button></h1>
-
+        <textarea id="responseTextArea" class="UIInput"
+        style="width:90vw; height:400px;margin:0 5vw"></textarea>       
                   
 
     </div>
@@ -172,7 +173,7 @@ function processImage(stream) {
 
     .done(function(data) {
         // Show formatted JSON on webpage.
-       
+        $("#responseTextArea").val(JSON.stringify(data, null, 2));
         console.log(data);
     
 
