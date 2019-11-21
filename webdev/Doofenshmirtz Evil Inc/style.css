@@ -50,6 +50,7 @@ overflow: hidden;
     margin-left: 20px;
 }
 .specs{
+
     display:grid;
     grid-template-columns:1fr 1fr 1fr;
     grid-auto-rows: 100%;
@@ -86,11 +87,7 @@ a.support{
 	transition:.5s;
 	border-radius: 5px;
 }
-a.support:hover,a.navy:hover{
-color:black;
 
-
-}
 .ss{
 	position:absolute;
 	right:0;

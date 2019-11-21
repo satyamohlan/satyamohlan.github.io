@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100&display=swap" rel="stylesheet">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/d3/5.12.0/d3.min.js"> 
+  <script src="https://www.gstatic.com/firebasejs/7.4.0/firebase.js"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>School Content Management System</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body onload=main()>
+        <nav class="nav-con">
+
+                <a href='' class="naam">Student portal</a>
+                
+                <a href="" class="support">Pre-order Now</a>
+            </nav>
+            <div class="all">
+            <div class="upload">
+                <h3>Upload any file</h3>
+            <input type="file" accept="image/*,csv/*" id='file-input'>
+    </div>
+       
+    <div id="overlay">
+        <img src="search.svg" alt="">
+        <h1>drop any file</h1>
+      
+    </div>
+    
+    <div id="user-content">
+        
+    </div>
+    <div id="myModal" class="modal">
+
+            <!-- The Close Button -->
+            <span class="close">&times;</span>
+            span
+            <!-- Modal Content (The Image) -->
+            <img class="modal-content" id="img01">
+          
+            <!-- Modal Caption (Image Text) -->
+            <div id="caption"></div>
+          </div>
+          <div id="yModal" class="modal">
+
+                <!-- The Close Button -->
+                <span class="close">&times;</span>
+                
+                <!-- Modal Content (The Image) -->
+                <div class="modal-content1">                <img class="modal-content" id="img01">
+                  </div>
+              <h3 id="txt"></h3>
+                <!-- Modal Caption (Image Text) -->
+                <div id="caption">
+              </div>
+
+              </div>
+</div>
+</body>
+<script src="scripts/main.js"></script>
+<script src="scripts/convertor.js"></script>
+<script src="scripts/dragger.js"></script>
+
+</html>

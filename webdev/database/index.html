@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+ <style>
+html {
+	line-height: 1.15;
+	-webkit-text-size-adjust: 100%
+}
+*{
+  outline: none;
+}
+body {
+	margin: 0;
+}
+
+h1 {
+	font-size: 2em;
+	margin: .67em 0
+}
+
+a {
+	background-color: transparent
+}
+
+code {
+	font-family: monospace, monospace;
+	font-size: 1em
+}
+
+img {
+	border-style: none
+}
+
+[type=button],
+[type=reset],
+[type=submit] {
+	-webkit-appearance: button
+}
+
+[type=button]::-moz-focus-inner,
+[type=reset]::-moz-focus-inner,
+[type=submit]::-moz-focus-inner {
+	border-style: none;
+	padding: 0
+}
+
+[type=button]:-moz-focusring,
+[type=reset]:-moz-focusring,
+[type=submit]:-moz-focusring {
+	outline: 1px dotted ButtonText
+}
+
+[type=checkbox],
+[type=radio] {
+	box-sizing: border-box;
+	padding: 0
+}
+
+[type=number]::-webkit-inner-spin-button,
+[type=number]::-webkit-outer-spin-button {
+	height: auto
+}
+
+[type=search] {
+	-webkit-appearance: textfield;
+	outline-offset: -2px
+}
+
+[type=search]::-webkit-search-decoration {
+	-webkit-appearance: none
+}
+
+::-webkit-file-upload-button {
+	-webkit-appearance: button;
+	font: inherit
+}
+
+[hidden] {
+	display: none
+}
+
+body {
+	margin: 0;
+	overflow-x: hidden;
+	font-family:Roboto, sans-serif;
+	width: 100vw;
+  color:white;
+  background: #333333;
+  text-align: center;
+ overflow: hidden;
+ background-color: #cc5577;
+background-image: url("https://bbpspp.balbharati.org/wp-content/uploads/2016/10/bnr7.jpg");
+background-attachment: fixed;
+background-size: contain
+ 
+}
+button {
+	background:#3498DB;
+	border: 0;
+	color: #fff;
+	font-family: Roboto, sans-serif;
+	font-size: 20px;
+  margin-top:30px;
+  padding:5px 10px;
+  border-radius: 13px;
+	transition: .5s;
+	text-decoration: none
+}
+#one{
+width:350px;
+height: 95vh;
+background:#4CAF50;
+margin:auto;
+padding:0vh 5vh;
+border-radius: 20px;
+
+}
+#one h1{
+  padding:60px;
+}
+p{
+  font-size: 20px;
+  text-align:left;
+  margin-bottom:15px;
+  margin-top: 30px;
+  margin-left:10%;
+}
+#one input{
+margin:0px 5%;
+width:80%;
+border-radius: 10px;
+    padding: 5px;
+    height: 20px;
+    padding-left: 10px;
+}
+.error{
+  color:indianred;
+  font-size:15px;
+  font-weight:bold;
+  text-align: center;
+  margin-left: 0;
+}
+</style>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link href="https://fonts.googleapis.com/css?family=Roboto:100,200" rel="stylesheet">
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <title>School Content Management System</title>
+   <script src="https://www.gstatic.com/firebasejs/7.4.0/firebase.js"></script>
+   
+ </head>
+
+ <body onload=init()>
+    <div id="one"> 
+         <h1>Student Login</h1>
+         <p>Identification:</p>
+         <input type='text' name='username' id='username' value='user1' size=10 autofocus> <p>password:</p>
+         <input type='text' name='pass_word' id='pass_word' value='12345678' size=10 autofocus>     <br>
+         <div id="err"></div>
+         <button id="save_button" onclick=call()>Log In</button>
+         </div>
+         
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>    
+   <script>
+     var database;
+     var ref;
+       function init(){
+        var firebaseConfig = {
+    apiKey: "AIzaSyCpCItZb01X90OsRYbaS4w7161qspOdByU",
+    authDomain: "quickstart-1570945551367.firebaseapp.com",
+    databaseURL: "https://quickstart-1570945551367.firebaseio.com",
+    projectId: "quickstart-1570945551367",
+    storageBucket: "quickstart-1570945551367.appspot.com",
+    messagingSenderId: "143171952809",
+    appId: "1:143171952809:web:a2d873f0cf9d2465f089b8",
+    measurementId: "G-X8DSDS2J6Z"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+     document.cookie = "username=John Doe;" 
+      database=firebase.database();
+      ref=database.ref('users/auth')
+     
+      }
+      function call(){
+        ref.on('value',gotData,errData);
+      }
+     function gotData(Data){
+      var users=Data.val();
+      var keys=Object.keys(users);
+      console.log(keys);
+      for(var i=0;i<keys.length;i++){
+        var k=keys[i];
+        var inuser=document.getElementById('username').value;
+        var password=document.getElementById('pass_word').value;
+        var username=users[k].username;
+        var pass=users[k].password;
+        if(inuser==username &&password==pass){
+          document.cookie = "username="+username;
+          console.log(getCookie('username'));
+          window.location.replace("final.html");
+}
+else{
+  document.getElementById("err").innerHTML='';
+
+  var para = document.createElement("p");                 // Create a <p> element
+            para.innerHTML ='Username/Password invalid';  
+            para.className='error'; 
+            document.getElementById("err").appendChild(para);
+}
+        }
+        
+        
+      }
+     
+     function errData(err){
+       console.log(err);
+     }
+     function getCookie(cname) {
+  var name = cname + "=";
+  var decodedCookie = decodeURIComponent(document.cookie);
+  var ca = decodedCookie.split(';');
+  for(var i = 0; i <ca.length; i++) {
+    var c = ca[i];
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
+}
+ 
+   </script>
+ </body>
+</html>  
