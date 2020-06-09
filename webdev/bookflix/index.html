@@ -1,75 +1,92 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <title>Microsoft Cognitive Services Speech SDK JavaScript Quickstart</title>
   <meta charset="utf-8" />
 </head>
-<body style="font-family:'Helvetica Neue',Helvetica,Arial,sans-serif; font-size:13px;">
-  <!-- <uidiv> -->
-  <div id="warning">
-    <h1 style="font-weight:500;">Speech Recognition Speech SDK not found (microsoft.cognitiveservices.speech.sdk.bundle.js missing).</h1>
-  </div>
-  
-  <div id="content" style="display:none">
-    <table width="100%">
-      <tr>
-        <td></td>
-        <td><h1 style="font-weight:500;">Microsoft Cognitive Services Speech SDK JavaScript Quickstart</h1></td>
-      </tr>
-      <tr>
-        <td align="right"><a href="https://docs.microsoft.com/azure/cognitive-services/speech-service/get-started" target="_blank">Subscription</a>:</td>
-        <td><input id="subscriptionKey" type="text" size="40" value="d2de2d3a4fa64fe1aa87306b2f3dbad1"></td>
-      </tr>
-      <tr>
-        <td align="right">Region</td>
-        <td><input id="serviceRegion" type="text" size="40" value="westus"></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td><button id="startRecognizeOnceAsyncButton">Start recognition</button></td>
-      </tr>
-      <tr>
-        <td align="right" valign="top">Results</td>
-        <td><textarea id="phraseDiv" style="display: inline-block;width:500px;height:200px"></textarea></td>
-      </tr>
-    </table>
-  </div>
-  <!-- </uidiv> -->
 
-  <!-- <speechsdkref> -->
-  <!-- Speech SDK reference sdk. -->
+<body>
+
+  <button id="startRecognizeOnceAsyncButton">Start recognition</button>
+  <button onclick=main()>ok</button>
+
   <script src="microsoft.cognitiveservices.speech.sdk.bundle.js"></script>
-  <!-- </speechsdkref> -->
-
-  <!-- <authorizationfunction> -->
-  <!-- Speech SDK Authorization token -->
   <script>
-  // Note: Replace the URL with a valid endpoint to retrieve
-  //       authorization tokens for your subscription.
-  var authorizationEndpoint = "https://westus.api.cognitive.microsoft.com/sts/v1.0";
+    var authorizationEndpoint = "https://westus.api.cognitive.microsoft.com/sts/v1.0";
 
-  function RequestAuthorizationToken() {
-    if (authorizationEndpoint) {
-      var a = new XMLHttpRequest();
-      a.open("GET", authorizationEndpoint);
-      a.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-      a.send("");
-      a.onload = function() {
+    function RequestAuthorizationToken() {
+      if (authorizationEndpoint) {
+        var a = new XMLHttpRequest();
+        a.open("GET", authorizationEndpoint);
+        a.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        a.send("");
+        a.onload = function () {
           var token = JSON.parse(atob(this.responseText.split(".")[1]));
           serviceRegion.value = token.region;
           authorizationToken = this.responseText;
           subscriptionKey.disabled = true;
           subscriptionKey.value = "using authorization token (hit F5 to refresh)";
           console.log("Got an authorization token: " + token);
+        }
       }
     }
-  }
   </script>
   <!-- </authorizationfunction> -->
 
   <!-- <quickstartcode> -->
   <!-- Speech SDK USAGE -->
   <script>
+    var time;
+    function main(){
+    launch("good morning reader;what would you like to read today?");
+    setTimeout(function(){
+      var din=listen();
+      console.log(din);
+    search(din);
+    },time);
+
+    
+    }
+    function listen() {
+      startRecognizeOnceAsyncButton.disabled = true;
+      //phraseDiv.innerHTML = "";
+      
+      // if we got an authorization token, use the token. Otherwise use the provided subscription key
+      var speechConfig;
+      if (authorizationToken) {
+        speechConfig = SpeechSDK.SpeechConfig.fromAuthorizationToken(authorizationToken, serviceRegion);
+      }
+       else {
+        if (subscriptionKey === "" || subscriptionKey === "subscription") {
+          alert("Please enter your Microsoft Cognitive Services Speech subscription key!");
+          return;
+        }
+        speechConfig = SpeechSDK.SpeechConfig.fromSubscription(subscriptionKey, serviceRegion);
+      }
+
+      speechConfig.speechRecognitionLanguage = "en-US";
+      var audioConfig = SpeechSDK.AudioConfig.fromDefaultMicrophoneInput();
+      recognizer = new SpeechSDK.SpeechRecognizer(speechConfig, audioConfig);
+
+      recognizer.recognizeOnceAsync(
+         function (result) {
+          starttRecognizeOnceAsyncButton.disabled = false;
+          window.console.log(result.text);
+          recognizer.close();
+          recognizer = undefined;
+          return result.text;
+        },
+        function (err) {
+          startRecognizeOnceAsyncButton.disabled = false;
+          //phraseDiv.innerHTML += err;
+          window.console.log(err);
+
+          recognizer.close();
+          recognizer = undefined;
+        });
+        
+    }
     // status fields and start button in UI
     var phraseDiv;
     var startRecognizeOnceAsyncButton;
@@ -82,63 +99,94 @@
 
     document.addEventListener("DOMContentLoaded", function () {
       startRecognizeOnceAsyncButton = document.getElementById("startRecognizeOnceAsyncButton");
-      subscriptionKey = document.getElementById("subscriptionKey");
-      serviceRegion = document.getElementById("serviceRegion");
-      phraseDiv = document.getElementById("phraseDiv");
+      subscriptionKey = "d2de2d3a4fa64fe1aa87306b2f3dbad1";
+      serviceRegion = "westus";
+      // phraseDiv = document.getElementById("phraseDiv");
 
-      startRecognizeOnceAsyncButton.addEventListener("click", function () {
-        startRecognizeOnceAsyncButton.disabled = true;
-        phraseDiv.innerHTML = "";
 
-        // if we got an authorization token, use the token. Otherwise use the provided subscription key
-        var speechConfig;
-        if (authorizationToken) {
-          speechConfig = SpeechSDK.SpeechConfig.fromAuthorizationToken(authorizationToken, serviceRegion.value);
-        } else {
-          if (subscriptionKey.value === "" || subscriptionKey.value === "subscription") {
-            alert("Please enter your Microsoft Cognitive Services Speech subscription key!");
-            return;
-          }
-          speechConfig = SpeechSDK.SpeechConfig.fromSubscription(subscriptionKey.value, serviceRegion.value);
-        }
 
-        speechConfig.speechRecognitionLanguage = "en-US";
-        var audioConfig  = SpeechSDK.AudioConfig.fromDefaultMicrophoneInput();
-        recognizer = new SpeechSDK.SpeechRecognizer(speechConfig, audioConfig);
-
-        recognizer.recognizeOnceAsync(
-          function (result) {
-            startRecognizeOnceAsyncButton.disabled = false;
-            phraseDiv.innerHTML += result.text;
-            window.console.log(result);
-
-            recognizer.close();
-            recognizer = undefined;
-          },
-          function (err) {
-            startRecognizeOnceAsyncButton.disabled = false;
-            phraseDiv.innerHTML += err;
-            window.console.log(err);
-
-            recognizer.close();
-            recognizer = undefined;
-          });
-      });
-
-      if (!!window.SpeechSDK) {
-        SpeechSDK = window.SpeechSDK;
-        startRecognizeOnceAsyncButton.disabled = false;
-
-        document.getElementById('content').style.display = 'block';
-        document.getElementById('warning').style.display = 'none';
-
-        // in case we have a function for getting an authorization token, call it.
-        if (typeof RequestAuthorizationToken === "function") {
-            RequestAuthorizationToken();
-        }
-      }
     });
+    var available_voices;
+
+    // list of languages is probably not loaded, wait for it
+    if (window.speechSynthesis.getVoices().length == 0) {
+      window.speechSynthesis.addEventListener('voiceschanged', function () {
+        available_voices = window.speechSynthesis.getVoices();
+      });
+    } else {
+      available_voices = window.speechSynthesis.getVoices();
+    }
+
+    function launch(message) {
+      var msg = new SpeechSynthesisUtterance();
+      var available_voices = window.speechSynthesis.getVoices();
+
+      // this will hold an english voice
+      var english_voice = '';
+
+      // find voice by language locale "en-US"
+
+
+      english_voice = available_voices[3];
+
+
+      msg.voice = english_voice; // Note: some voices don't support altering params
+      //msg.voiceURI = 'native';
+      console.log(english_voice);
+      msg.volume = 1; // 0 to 1
+      msg.rate = 1; // 0.1 to 10
+      msg.pitch = 1; //0 to 2
+      msg.text = message;
+      msg.lang = 'en-US';
+
+      msg.onend = function (e) {
+       time=event.elapsedTime;
+        console.log('Finished in ' + event.elapsedTime + ' seconds.');
+      };
+      window.speechSynthesis.speak(msg);
+    }
+    async function search(text){
+      const response=await fetch('books.csv');
+        const dat=await response.text();
+        const s=dat.split('\n');
+        var data=[];
+        s.forEach(row => {
+            x=row.split(',');
+            data.push(x);
+           
+            
+        });
+        loop:
+        for (let i = 0; i < data.length; i++) {
+          for (let j = 0; j < data[i].length-1; j++) {
+            if(text.includes(data[i][j])){
+              if(j==0){
+                console.log("book found "+i+" "+j);
+                const responser=await fetch("https://www.googleapis.com/books/v1/volumes?q=intitle:"+data[i][j]+"&key=AIzaSyAK673xepEJhpVU8oxZXxV0iBDDBIUK1IY");
+                const booker=await responser.json();
+                for (let i = 0; i < Math.min(booker.items.length,30); i++) {
+                 console.log(booker.items[i].volumeInfo);
+                  
+                }
+                
+              }
+              if(j==1){
+                console.log("author found");
+              }
+              if(j==2){
+                console.log("genre found");
+              }
+              launch("here are some results matching your search at");  
+              return;
+            }
+            
+          }
+     }
+
+     launch("sorry no results were found;please try again");       
+    }
   </script>
-  <!-- </quickstartcode> -->
+<script src=""https://www.googleapis.com/books/v1/volumes/X58EqptgJV8C""></script>
 </body>
+
 </html>

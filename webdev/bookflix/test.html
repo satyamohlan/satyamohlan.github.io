@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<button onclick="doit()">ok</button>
+</body>
+<script>
+    var available_voices;
+
+// list of languages is probably not loaded, wait for it
+if(window.speechSynthesis.getVoices().length == 0) {
+	window.speechSynthesis.addEventListener('voiceschanged', function() {
+		available_voices = window.speechSynthesis.getVoices();
+	});
+}
+else {
+	available_voices = window.speechSynthesis.getVoices();
+}
+    function doit(){
+var msg = new SpeechSynthesisUtterance();
+var available_voices = window.speechSynthesis.getVoices();
+
+	// this will hold an english voice
+	var english_voice = '';
+
+	// find voice by language locale "en-US"
+
+
+		english_voice = available_voices[3];
+
+    
+msg.voice = english_voice; // Note: some voices don't support altering params
+//msg.voiceURI = 'native';
+console.log(english_voice);
+msg.volume = 1; // 0 to 1
+msg.rate = 1; // 0.1 to 10
+msg.pitch = 1; //0 to 2
+msg.text = 'Good morning reader;what would you like to read today?';
+msg.lang = 'en-US';
+
+msg.onend = function(e) {
+  console.log('Finished in ' + event.elapsedTime + ' seconds.');
+};
+window.speechSynthesis.speak(msg);
+}
+</script>
+
+</html>
