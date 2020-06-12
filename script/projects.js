@@ -8,7 +8,7 @@ function expand(s) {
 
     ex = true;
   } else {
-    $(".project-list")[s].style.display = "inline-block";
+    $(".project-list")[s].style.display = "flex";
     $("div.plus")[s].classList.add("minus");
 
 

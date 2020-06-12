@@ -468,6 +468,7 @@ h1.under {
 	img.me {
 		top: 300px
 	}
+
 	.name {
 		margin-left: 30%
 	}
@@ -649,6 +650,7 @@ a.link1:hover {
 	.ss .navy {
 		display: none
 	}
+
 	.ss {
 		display: inline
 	}
@@ -663,6 +665,7 @@ a.link1:hover {
 		width: 40%;
 		left: 0
 	}
+
 	.name {
 		margin-left: 0;
 		top: -300px;
@@ -691,6 +694,7 @@ a.link1:hover {
 	.sidebar .two {
 		width: 100vw
 	}
+
 	img.me {
 		top: 0
 	}
@@ -733,6 +737,7 @@ a.link1:hover {
 	.ss .navy {
 		display: none
 	}
+
 	.ss .fas {
 		display: block
 	}
@@ -747,6 +752,7 @@ a.link1:hover {
 		width: 40%;
 		left: 0
 	}
+
 	.name {
 		margin-left: 0;
 		top: -350px;
@@ -767,16 +773,19 @@ a.link1:hover {
 	.sidebar .two {
 		width: 100vw
 	}
+
 	img.me {
 		top: 0;
 		width: 60%;
 		padding: 20%
 	}
+
 	.navigator {
 		width: 100vw;
 		margin-left: 0;
 		margin-right: 0
 	}
+
 	.link1 {
 		font-size: .9em
 	}
@@ -786,6 +795,7 @@ a.link1:hover {
 	from {
 		opacity: 0
 	}
+
 	to {
 		opacity: 1
 	}
@@ -796,6 +806,7 @@ a.link1:hover {
 		opacity: 0;
 		top: 20px
 	}
+
 	to {
 		opacity: 1;
 		top: 0
@@ -808,66 +819,70 @@ a.link1:hover {
 		transform: scaleX(1);
 		border-radius: 0
 	}
+
 	to {
 		-webkit-transform: scaleX(-1);
 		transform: scaleX(1);
 		border-radius: 50%
 	}
 }
+
 .instagram_profile {
 	/* CSS styles here */
-width:100%;
-display: grid;
-  }
-  
-  .instagram_profile_image {
-	/* CSS styles here */
-  }
+	width: 100%;
+	display: grid;
+}
 
-  .instagram_feed{
-	  display: grid;
-	  grid-template-columns: 1fr 3fr
-  }
-  .instagram_username {
+.instagram_profile_image {
+	/* CSS styles here */
+}
+
+.instagram_feed {
+	display: grid;
+	grid-template-columns: 1fr 3fr
+}
+
+.instagram_username {
 	/* CSS styles here */
 
-display: inline;
-  }
-  
-  .instagram_biography {
+	display: inline;
+}
+
+.instagram_biography {
 	/* CSS styles here */
 	display: none;
-  }
-  
-  .instagram_gallery {
+}
 
-	  width:60vw;
+.instagram_gallery {
 
-	  
+	width: 60vw;
+
+
 	/* CSS styles here */
-  }
-  * {
+}
+
+* {
 	box-sizing: border-box;
-  }
-  
-  /* Position the image container (needed to position the left and right arrows) */
-  .container {
+}
+
+/* Position the image container (needed to position the left and right arrows) */
+.container {
 	position: relative;
-  }
-  
-  /* Hide the images by default */
-  .mySlides {
+}
+
+/* Hide the images by default */
+.mySlides {
 	display: none;
-  }
-  
-  /* Add a pointer when hovering over the thumbnail images */
-  .cursor {
+}
+
+/* Add a pointer when hovering over the thumbnail images */
+.cursor {
 	cursor: pointer;
-  }
-  
-  /* Next & previous buttons */
-  .prev,
-  .next {
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
 	cursor: pointer;
 	position: absolute;
 	top: 40%;
@@ -880,55 +895,55 @@ display: inline;
 	border-radius: 0 3px 3px 0;
 	user-select: none;
 	-webkit-user-select: none;
-  }
-  
-  /* Position the "next button" to the right */
-  .next {
+}
+
+/* Position the "next button" to the right */
+.next {
 	right: 0;
 	border-radius: 3px 0 0 3px;
-  }
-  
-  /* On hover, add a black background color with a little bit see-through */
-  .prev:hover,
-  .next:hover {
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
 	background-color: rgba(0, 0, 0, 0.8);
-  }
-  
-  /* Number text (1/3 etc) */
-  .numbertext {
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
 	color: #f2f2f2;
 	font-size: 12px;
 	padding: 8px 12px;
 	position: absolute;
 	top: 0;
-  }
-  
-  /* Container for image text */
-  .caption-container {
+}
+
+/* Container for image text */
+.caption-container {
 	text-align: center;
 	background-color: #222;
 	padding: 2px 16px;
 	color: white;
-  }
-  
-  .row:after {
+}
+
+.row:after {
 	content: "";
 	display: table;
 	clear: both;
-  }
-  
-  /* Six columns side by side */
-  .column {
+}
+
+/* Six columns side by side */
+.column {
 	float: left;
 	width: 16.66%;
-  }
-  
-  /* Add a transparency effect for thumnbail images */
-  .demo {
+}
+
+/* Add a transparency effect for thumnbail images */
+.demo {
 	opacity: 0.6;
-  }
-  
-  .active,
-  .demo:hover {
+}
+
+.active,
+.demo:hover {
 	opacity: 1;
-  }
+}
