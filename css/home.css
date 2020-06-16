@@ -104,24 +104,21 @@ body {
 	}
 }
 
+
+nav.nav-con {
+	background: rgba(0, 0, 0, 0.3);
+}
+
 nav {
+	background: rgb(0, 0, 0);
 	position: fixed;
 	z-index: 5;
-	overflow: hidden;
+
 	height: 60px;
 	width: 100%
 }
 
-.nav-con {
-	background: #000
-}
 
-.naam {
-	position: absolute;
-	font-size: 25px;
-	text-decoration: none;
-	padding: 10px
-}
 
 .sidebar .navy {
 	padding: 5px;
@@ -134,13 +131,12 @@ nav {
 }
 
 .navy {
-	background: 0 0;
-	border: 0;
 	color: #fff;
-	font-family: noto-sans, sans-serif;
-	font-size: 15px;
+	font-family: 'Roboto', sans-serif;
+	font-weight: 400;
+	font-size: 16px;
 	left: 20px;
-	height: 90%;
+	height: 100%;
 	transition: .5s;
 	margin-left: 10px;
 	text-decoration: none
@@ -149,7 +145,8 @@ nav {
 nav .ss .navy {
 	justify-self: center;
 	align-self: center;
-	padding-top: 30px;
+	padding: 27px 0px 0px;
+
 	width: 90px;
 	text-align: center
 }
@@ -305,7 +302,12 @@ img.me:hover {
 
 .naam {
 	position: absolute;
-	font-size: 25px
+	font-size: 25px;
+	height: 60px;
+	line-height: 40px;
+	padding: 10px;
+	font-family: 'Asap', sans-serif;
+
 }
 
 * {
@@ -473,22 +475,9 @@ h1.under {
 	}
 }
 
-.navy {
-	background: 0 0;
-	border: 0;
-	color: #fff;
-	font-family: noto-sans, sans-serif;
-	font-size: 15px;
-	left: 20px;
-	height: 90%;
-	transition: .5s;
-	margin-left: 10px
-}
 
-.naam {
-	position: absolute;
-	font-size: 25px
-}
+
+
 
 .learnm {
 	font-family: Oswald, sans-serif;
@@ -520,14 +509,7 @@ h1.under {
 	display: none
 }
 
-.ss {
-	position: absolute;
-	right: 0;
-	margin-right: 20px;
-	top: 0;
-	height: 100%;
-	z-index: 2
-}
+
 
 .sidebar {
 	width: 100vw;
@@ -699,14 +681,7 @@ a.link1:hover {
 	}
 }
 
-.ss {
-	position: absolute;
-	right: 0;
-	margin-right: 20px;
-	top: 0;
-	height: 100%;
-	z-index: 2
-}
+
 
 .sidebar {
 	width: 100vw;
