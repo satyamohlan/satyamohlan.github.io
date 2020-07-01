@@ -245,11 +245,13 @@ div.content {
 .icons a.fab {
   display: inline;
   font-size: 20px;
-  color: #000;
-  background-color: #fff;
+  color: #fff;
+  /*background-color: #191818;*/
   text-decoration: none;
+  position: relative;
+  top: 20px;
   padding: 10px;
-  border-radius: 10px;
+  border-radius: 50%;
 }
 
 .contactme .icons a.fab {
@@ -257,7 +259,8 @@ div.content {
   margin-left: 10px;
 }
 
-.fab:hover {
+.icons a.fab:hover {
+  background-color: #fff;
   color: #000;
 }
 
@@ -273,21 +276,6 @@ div.content {
   animation-delay: 13.25s;
 }
 
-.fab.fa-twitter:hover {
-  color: #1da1f2;
-}
-
-.fab.fa-youtube:hover {
-  color: red;
-}
-
-.fab.fa-github:hover {
-  color: purple;
-}
-
-.fab.fa-instagram:hover {
-  color: #750a75;
-}
 
 img.me {
   width: 25vw;
@@ -347,8 +335,12 @@ img.me {
 }
 
 .prolink {
-  background-image: linear-gradient(to right, #f44336, #ec407a);
-  width: max-content;
+  background-image: linear-gradient(to right, #9C27B0, #512DA8);
+
+  border-radius: 12px;
+  box-shadow: #000 2px 2px 3px;
+  width: 340px;
+  margin-bottom: 10px;
   height: max-content;
   display: grid;
   grid-auto-columns: max-content;
@@ -364,7 +356,8 @@ img.me {
 }
 
 #contactm {
-  background-image: linear-gradient(to right, #0f4e48, #00bcd4);
+  background-image: linear-gradient(to right, #00897B, #4CAF50);
+  ;
 }
 
 .div2 {
@@ -594,6 +587,7 @@ footer .whole {
   }
 
   .name h3 {
+    font-size: 18px;
     margin-left: 5%;
     margin-right: 5%;
   }
@@ -602,6 +596,14 @@ footer .whole {
 @media (max-width: 500px) {
   .sidebar .two {
     width: 100vw;
+  }
+
+  img.me {
+    min-width: 270px;
+  }
+
+  .am h3 {
+    font-size: 27px;
   }
 }
 
