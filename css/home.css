@@ -505,7 +505,7 @@ footer {
   color: #000;
 }
 
-footer.whole p {
+footer .whole p {
   text-align: center;
   font: 15px sans-serif;
   display: inline-block;
@@ -547,7 +547,7 @@ footer .fab {
   grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
-footer.whole a.link1 {
+footer .whole a.link1 {
   color: inherit;
   text-decoration: none;
   position: relative;
@@ -569,7 +569,7 @@ a.link1:hover {
   display: inline-block;
 }
 
-footer.whole {
+footer .whole {
   display: grid;
   position: relative;
   margin-left: 0;
