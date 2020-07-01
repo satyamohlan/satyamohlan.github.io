@@ -380,7 +380,7 @@ img.me {
   font-weight: 400;
   width: max-content;
   justify-self: center;
-  min-height: 90vh;
+  min-height: 80vh;
 }
 
 .am h1 {
@@ -416,6 +416,29 @@ h1.under::before {
   height: 2px;
 }
 
+div.skills {
+  display: flex;
+  flex-wrap: wrap;
+  width: min-content;
+  align-content: center;
+  margin: auto;
+}
+
+div.skill {
+  padding: 20px;
+}
+
+.div2 .whole {
+  height: 10px;
+  max-width: 400px;
+  width: 80vw;
+}
+
+.part {
+  height: 10px;
+  border-radius: 5px;
+  background: linear-gradient(to right, red, magenta, blue)
+}
 
 #projects h1.under {
   border-bottom: 4px solid green;
@@ -428,7 +451,7 @@ h1.under::before {
 }
 
 .am h3 {
-  font: 33px 'Roboto Mono', sans-serif;
+  font: 31px 'Roboto Mono', sans-serif;
   margin: 30px 0 0;
 }
 
@@ -443,6 +466,7 @@ h1.under::before {
 
 #projects {
   background: #fff;
+  color: #000;
 }
 
 .learnm {
@@ -481,7 +505,7 @@ footer {
   color: #000;
 }
 
-.whole p {
+footer.whole p {
   text-align: center;
   font: 15px sans-serif;
   display: inline-block;
@@ -523,7 +547,7 @@ footer .fab {
   grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
-.whole a.link1 {
+footer.whole a.link1 {
   color: inherit;
   text-decoration: none;
   position: relative;
@@ -545,7 +569,7 @@ a.link1:hover {
   display: inline-block;
 }
 
-.whole {
+footer.whole {
   display: grid;
   position: relative;
   margin-left: 0;
