@@ -1,6 +1,6 @@
 section.div2 {
   width: 100vw;
-  font-family: 'Oswald', sans-serif;
+  font-family: 'Noto Sans', sans-serif;
   display: grid;
   overflow-x: hidden;
   height: fit-content;
@@ -9,7 +9,6 @@ section.div2 {
   background-color: #00022b;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='250' height='30' viewBox='0 0 1000 120'%3E%3Cg fill='none' stroke='%23222' stroke-width='10' %3E%3Cpath d='M-500 75c0 0 125-30 250-30S0 75 0 75s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500 45c0 0 125-30 250-30S0 45 0 45s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500 105c0 0 125-30 250-30S0 105 0 105s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500 15c0 0 125-30 250-30S0 15 0 15s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500-15c0 0 125-30 250-30S0-15 0-15s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500 135c0 0 125-30 250-30S0 135 0 135s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3C/g%3E%3C/svg%3E");
   text-align: center;
-  font-family: 'Open Sans', sans-serif;
   padding-top: 50px;
   padding-bottom: 190px;
 }
@@ -26,6 +25,8 @@ h1 {
   font-size: 60px;
   color: whitesmoke;
   margin-bottom: 40px;
+  font-weight: 300;
+
 }
 
 .learnm {
@@ -55,24 +56,33 @@ h1 {
 
 .close {
   width: 80vw;
-  height: 50px;
   padding-bottom: 10px;
-  font-family: monospace;
-  font-size: 20px;
+  margin-bottom: 2px;
+  font-family: 'Oswald', sans-serif;
+  height: min-content;
+  font-size: 21px;
+  text-transform: uppercase;
   border: 2px solid rgb(8, 100, 161);
   justify-self: center;
   background: rgb(11, 2, 24);
-  color: white;
+  color: whitesmoke;
+  position: sticky;
+}
+
+.active {
+  color: rgb(75, 163, 221);
 }
 
 .close:hover {
   cursor: pointer;
+  color: #fff;
+
 }
 
 .plus:before {
   opacity: 1;
-  left: 11px;
-  top: -100%;
+  left: 15px;
+  top: -180%;
   height: 2px;
   margin-top: -1px;
   width: 16px;
@@ -86,8 +96,8 @@ h1 {
 }
 
 .plus:after {
-  left: 19px;
-  top: -100%;
+  left: 23px;
+  top: -180%;
   height: 16px;
   margin-top: -8px;
   width: 2px;
@@ -103,6 +113,7 @@ h1 {
 }
 
 .minus:before {
+  transition: 0.5s;
   opacity: 0;
 }
 
