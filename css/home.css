@@ -618,6 +618,10 @@ footer .whole {
     min-width: 270px;
   }
 
+  .div1 {
+    grid-template-rows: 1.5fr 1fr;
+  }
+
   .am h3 {
     font-size: 27px;
   }
