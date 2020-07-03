@@ -335,7 +335,7 @@ img.me {
 }
 
 .prolink {
-  background-image: linear-gradient(to right, #9C27B0, #512DA8);
+  background-image: linear-gradient(to right, #9c27b0, #512da8);
 
   border-radius: 12px;
   box-shadow: #000 2px 2px 3px;
@@ -356,8 +356,7 @@ img.me {
 }
 
 #contactm {
-  background-image: linear-gradient(to right, #00897B, #4CAF50);
-  ;
+  background-image: linear-gradient(to right, #00897b, #4caf50);
 }
 
 .div2 {
@@ -395,7 +394,6 @@ h1.under {
 
   margin-top: 0px;
   transition: 5ms ease-in;
-
 }
 
 h1.under::before {
@@ -433,7 +431,7 @@ div.skill {
 .part {
   height: 10px;
   border-radius: 5px;
-  background: linear-gradient(to right, red, magenta, blue)
+  background: linear-gradient(to right, red, magenta, blue);
 }
 
 #projects h1.under {
@@ -533,21 +531,17 @@ a.fab.fa-twitter:hover {
 a.fab.fa-youtube:hover {
   color: red;
   background: local;
-
 }
 
 a.fab.fa-github:hover {
   color: purple;
   background: local;
-
 }
 
 a.fab.fa-instagram:hover {
   color: #750a75;
   background: local;
-
 }
-
 
 .navigator {
   margin: 20px 20px 15px;
@@ -619,7 +613,7 @@ footer .whole {
   }
 
   .div1 {
-    grid-template-rows: 1.4fr 1fr;
+    grid-template-rows: 1.2fr 1fr;
   }
 
   .am h3 {
