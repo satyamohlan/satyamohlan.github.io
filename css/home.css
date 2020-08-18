@@ -126,12 +126,29 @@ nav {
   text-decoration: none
 }
 
+.navy:hover {
+  transition: 0.5s;
+  background: #303030;
+  color: #fff;
+  cursor: pointer;
+}
+
+.two .navy:hover {
+  background: #fff;
+  color: #000;
+}
+
 nav .ss .navy {
   justify-self: center;
   align-self: center;
   padding: 27px 0px 0px;
   width: 90px;
   text-align: center
+}
+
+#intro .icons a.fab:hover {
+  background-color: #fff;
+  color: #000;
 }
 
 .ss {
@@ -223,6 +240,30 @@ div.content {
   top: 20px;
   padding: 10px;
   border-radius: 50%
+}
+
+a.fab.fa-twitter:hover {
+  color: #1da1f2;
+  background: local;
+}
+
+a.fab.fa-youtube:hover {
+  color: red;
+  background: local;
+}
+
+a.fab.fa-github:hover {
+  color: purple;
+  background: local;
+}
+
+a.fab.fa-instagram:hover {
+  color: #750a75;
+  background: local;
+}
+
+a.link1:hover {
+  color: #000;
 }
 
 .contactme .icons a.fab {
@@ -433,8 +474,20 @@ div.like h3>span {
   padding: 5px
 }
 
+.learnm:hover {
+  background: #fff;
+  color: #30336B;
+  border-color: #fff;
+}
+
 .learnm#contactm-bt {
   color: #30336B;
+  border-color: #30336B
+}
+
+.learnm#contactm-bt:hover {
+  background-color: #30336B;
+  color: #fff;
   border-color: #30336B
 }
 
@@ -446,6 +499,10 @@ div.like h3>span {
   position: relative;
   top: 15px;
   display: none
+}
+
+a.link1:hover {
+  color: #000;
 }
 
 footer {
@@ -530,10 +587,13 @@ footer .whole {
   }
 }
 
+.sidebar .two {
+  width: 100vw;
+  height: 100vh
+}
+
 @media (max-width:500px) {
-  .sidebar .two {
-    width: 100vw
-  }
+
 
   img.me {
     min-width: 270px
