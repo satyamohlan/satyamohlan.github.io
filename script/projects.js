@@ -34,3 +34,14 @@ $(window).scroll(function () {
 
   }
 });
+
+function play(s) {
+  if (s == 1) {
+    $('div.allpro').after('<div class="over"><iframe width="560" height="315" src="https://www.youtube.com/embed/8wEkiSgycrk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><a class="fas fa-times" id="nava" alt="side" onclick="pause()"></a></div>');
+  }
+
+}
+
+function pause() {
+  $('div.over').remove();
+}
