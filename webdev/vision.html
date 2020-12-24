@@ -128,14 +128,14 @@
     navigator.mediaDevices.getUserMedia(constraints)
         .then((stream) => {
             // Attach the video stream to the video element and autoplay.
-            if (window.innerHeight < window.innerWidth) {
+            if (window.innerHeight > window.innerWidth) {
                 canvas.height = stream.getTracks()[0].getSettings().width;
                 canvas.width = stream.getTracks()[0].getSettings().height;
-            } else if (window.innerHeight > window.innerWidth) {
+            } else if (window.innerHeight < window.innerWidth) {
                 canvas.width = stream.getTracks()[0].getSettings().width;
                 canvas.height = stream.getTracks()[0].getSettings().height;
             }
-            console.log(canvas.height);
+            console.log("running");
             player.srcObject = stream;
 
         });
