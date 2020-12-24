@@ -128,14 +128,14 @@
     navigator.mediaDevices.getUserMedia(constraints)
         .then((stream) => {
             // Attach the video stream to the video element and autoplay.
-            if (window.innerHeight > window.innerWidth) {
+            if (window.innerHeight < window.innerWidth) {
                 canvas.height = stream.getTracks()[0].getSettings().width;
                 canvas.width = stream.getTracks()[0].getSettings().height;
-            } else if (window.innerHeight < window.innerWidth) {
+            } else if (window.innerHeight > window.innerWidth) {
                 canvas.width = stream.getTracks()[0].getSettings().width;
                 canvas.height = stream.getTracks()[0].getSettings().height;
             }
-
+            console.log(canvas.height);
             player.srcObject = stream;
 
         });
@@ -152,7 +152,7 @@
         var subscriptionKey = "e80611b418434778a7a6117781281303";
 
         var uriBase =
-            "https://westcentralus.api.cognitive.microsoft.com/vision/v2.0/analyze";
+            "https://westcentralus.api.cognitive.microsoft.com/vision/v3.1/analyze";
 
         // Request parameters.
         var params = {
